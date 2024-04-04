@@ -26,14 +26,13 @@ public class MainActivity extends AppCompatActivity{
     final static int THRESHOLD = 50000;
 
     // Six icons are placed evenly around the outer menu
-    //
-    ImageView icon1, icon2, icon3, icon4, icon5, icon6,
+    // All the others are placed in the inner menu
+    ImageView icon1, icon2, icon3, icon4, icon5,
             icon1_1, icon1_2, icon1_3, icon1_4, icon1_5, icon1_6,
             icon2_1, icon2_2, icon2_3, icon2_4, icon2_5, icon2_6,
-            icon3_1, icon3_2, icon3_3, icon3_4, icon3_5, icon3_6,
-            icon4_1, icon4_2, icon4_3, icon4_4, icon4_5, icon4_6,
-            icon5_1, icon5_2, icon5_3, icon5_4, icon5_5, icon5_6,
-            icon6_1, icon6_2, icon6_3, icon6_4, icon6_5, icon6_6;
+            icon3_1, icon3_2, icon3_3, icon3_4, icon3_5,
+            icon4_1, icon4_2, icon4_3, icon4_4,
+            icon5_1, icon5_2, icon5_3, icon5_4, icon5_5, icon5_6;
 
     // The central button of the wavelet menu
     ImageButton button;
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity{
     boolean outerIsExpanded = false, innerIsExpanded = false;
 
     boolean iconSelected = false;
-
     // An image that represents when an outer menu item is selected
     Drawable pink_circle;
 
@@ -53,13 +51,12 @@ public class MainActivity extends AppCompatActivity{
     private long touchStartTime = 0;
 
     // Indicator of which icon is selected
-    boolean icon1Selected, icon2Selected, icon3Selected, icon4Selected, icon5Selected, icon6Selected,
+    boolean icon1Selected, icon2Selected, icon3Selected, icon4Selected, icon5Selected,
             icon1_1Selected, icon1_2Selected, icon1_3Selected, icon1_4Selected, icon1_5Selected, icon1_6Selected,
             icon2_1Selected, icon2_2Selected, icon2_3Selected, icon2_4Selected, icon2_5Selected, icon2_6Selected,
-            icon3_1Selected, icon3_2Selected, icon3_3Selected, icon3_4Selected, icon3_5Selected, icon3_6Selected,
-            icon4_1Selected, icon4_2Selected, icon4_3Selected, icon4_4Selected, icon4_5Selected, icon4_6Selected,
-            icon5_1Selected, icon5_2Selected, icon5_3Selected, icon5_4Selected, icon5_5Selected, icon5_6Selected,
-            icon6_1Selected, icon6_2Selected, icon6_3Selected, icon6_4Selected, icon6_5Selected, icon6_6Selected;
+            icon3_1Selected, icon3_2Selected, icon3_3Selected, icon3_4Selected, icon3_5Selected,
+            icon4_1Selected, icon4_2Selected, icon4_3Selected, icon4_4Selected,
+            icon5_1Selected, icon5_2Selected, icon5_3Selected, icon5_4Selected, icon5_5Selected, icon5_6Selected;
 
     /* ----------------------------------------------
      * onCreate
@@ -78,7 +75,6 @@ public class MainActivity extends AppCompatActivity{
         icon3 = findViewById(R.id.icon3);
         icon4 = findViewById(R.id.icon4);
         icon5 = findViewById(R.id.icon5);
-        icon6 = findViewById(R.id.icon6);
 
         icon1_1 = findViewById(R.id.icon1_1);
         icon1_2 = findViewById(R.id.icon1_2);
@@ -87,89 +83,68 @@ public class MainActivity extends AppCompatActivity{
         icon1_5 = findViewById(R.id.icon1_5);
         icon1_6 = findViewById(R.id.icon1_6);
 
-//        icon2_1 = findViewById(R.id.icon2_1);
-//        icon2_2 = findViewById(R.id.icon2_2);
-//        icon2_3 = findViewById(R.id.icon2_3);
-//        icon2_4 = findViewById(R.id.icon2_4);
-//        icon2_5 = findViewById(R.id.icon2_5);
-//        icon2_6 = findViewById(R.id.icon2_6);
-//
-//        icon3_1 = findViewById(R.id.icon3_1);
-//        icon3_2 = findViewById(R.id.icon3_2);
-//        icon3_3 = findViewById(R.id.icon3_3);
-//        icon3_4 = findViewById(R.id.icon3_4);
-//        icon3_5 = findViewById(R.id.icon3_5);
-//        icon3_6 = findViewById(R.id.icon3_6);
-//
-//        icon4_1 = findViewById(R.id.icon4_1);
-//        icon4_2 = findViewById(R.id.icon4_2);
-//        icon4_3 = findViewById(R.id.icon4_3);
-//        icon4_4 = findViewById(R.id.icon4_4);
-//        icon4_5 = findViewById(R.id.icon4_5);
-//        icon4_6 = findViewById(R.id.icon4_6);
-//
-//        icon5_1 = findViewById(R.id.icon5_1);
-//        icon5_2 = findViewById(R.id.icon5_2);
-//        icon5_3 = findViewById(R.id.icon5_3);
-//        icon5_4 = findViewById(R.id.icon5_4);
-//        icon5_5 = findViewById(R.id.icon5_5);
-//        icon5_6 = findViewById(R.id.icon5_6);
-//
-//        icon6_1 = findViewById(R.id.icon6_1);
-//        icon6_2 = findViewById(R.id.icon6_2);
-//        icon6_3 = findViewById(R.id.icon6_3);
-//        icon6_4 = findViewById(R.id.icon6_4);
-//        icon6_5 = findViewById(R.id.icon6_5);
-//        icon6_6 = findViewById(R.id.icon6_6);
+        icon2_1 = findViewById(R.id.icon2_1);
+        icon2_2 = findViewById(R.id.icon2_2);
+        icon2_3 = findViewById(R.id.icon2_3);
+        icon2_4 = findViewById(R.id.icon2_4);
+        icon2_5 = findViewById(R.id.icon2_5);
+        icon2_6 = findViewById(R.id.icon2_6);
+
+        icon3_1 = findViewById(R.id.icon3_1);
+        icon3_2 = findViewById(R.id.icon3_2);
+        icon3_3 = findViewById(R.id.icon3_3);
+        icon3_4 = findViewById(R.id.icon3_4);
+        icon3_5 = findViewById(R.id.icon3_5);
+
+        icon4_1 = findViewById(R.id.icon4_1);
+        icon4_2 = findViewById(R.id.icon4_2);
+        icon4_3 = findViewById(R.id.icon4_3);
+        icon4_4 = findViewById(R.id.icon4_4);
+
+        icon5_1 = findViewById(R.id.icon5_1);
+        icon5_2 = findViewById(R.id.icon5_2);
+        icon5_3 = findViewById(R.id.icon5_3);
+        icon5_4 = findViewById(R.id.icon5_4);
+        icon5_5 = findViewById(R.id.icon5_5);
+        icon5_6 = findViewById(R.id.icon5_6);
 
         icon1Selected = false;
         icon2Selected = false;
         icon3Selected = false;
         icon4Selected = false;
         icon5Selected = false;
-        icon6Selected = false;
 
         icon1_1Selected = false;
-//        icon1_2Selected = false;
-//        icon1_3Selected = false;
-//        icon1_4Selected = false;
-//        icon1_5Selected = false;
-//        icon1_6Selected = false;
-//
-//        icon2_1Selected = false;
-//        icon2_2Selected = false;
-//        icon2_3Selected = false;
-//        icon2_4Selected = false;
-//        icon2_5Selected = false;
-//        icon2_6Selected = false;
-//
-//        icon3_1Selected = false;
-//        icon3_2Selected = false;
-//        icon3_3Selected = false;
-//        icon3_4Selected = false;
-//        icon3_5Selected = false;
-//        icon3_6Selected = false;
-//
-//        icon4_1Selected = false;
-//        icon4_2Selected = false;
-//        icon4_3Selected = false;
-//        icon4_4Selected = false;
-//        icon4_5Selected = false;
-//        icon4_6Selected = false;
-//
-//        icon5_1Selected = false;
-//        icon5_2Selected = false;
-//        icon5_3Selected = false;
-//        icon5_4Selected = false;
-//        icon5_5Selected = false;
-//        icon5_6Selected = false;
-//
-//        icon6_1Selected = false;
-//        icon6_2Selected = false;
-//        icon6_3Selected = false;
-//        icon6_4Selected = false;
-//        icon6_5Selected = false;
-//        icon6_6Selected = false;
+        icon1_2Selected = false;
+        icon1_3Selected = false;
+        icon1_4Selected = false;
+        icon1_5Selected = false;
+        icon1_6Selected = false;
+
+        icon2_1Selected = false;
+        icon2_2Selected = false;
+        icon2_3Selected = false;
+        icon2_4Selected = false;
+        icon2_5Selected = false;
+        icon2_6Selected = false;
+
+        icon3_1Selected = false;
+        icon3_2Selected = false;
+        icon3_3Selected = false;
+        icon3_4Selected = false;
+        icon3_5Selected = false;
+
+        icon4_1Selected = false;
+        icon4_2Selected = false;
+        icon4_3Selected = false;
+        icon4_4Selected = false;
+
+        icon5_1Selected = false;
+        icon5_2Selected = false;
+        icon5_3Selected = false;
+        icon5_4Selected = false;
+        icon5_5Selected = false;
+        icon5_6Selected = false;
 
         // Initialize the menus
         outerMenu = findViewById(R.id.outerCircle);
@@ -236,8 +211,6 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
-
-
 
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -340,33 +313,6 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
-        icon1.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
-
-                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
-                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
-                    icon1.startDrag(data, shadowBuilder, button, 0);
-                }
-                return true;
-            }
-        });
-        icon1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
-                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
-
-                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
-                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
-                v.startDrag(dragData, null,null,0);
-
-                return false;
-            }
-        });
         /* ----------------------------------------------
          * Icon 1_x Listeners
          * ---------------------------------------------- */
@@ -443,6 +389,370 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        icon1_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon1_2.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon1_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon1_2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_2);
+                        if(iconSelected && !icon1_2Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon1_2.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon1_2Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon1_2Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon1_2Selected = true;
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_2);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon1_3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon1_3.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon1_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon1_3.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_3);
+                        if(iconSelected && !icon1_3Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon1_3.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon1_3Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon1_3Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon1_3Selected = true;
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon1_4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon1_4.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon1_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon1_4.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_4);
+                        if(iconSelected && !icon1_4Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon1_4.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon1_4Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon1_4Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon1_4Selected = true;
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_4);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon1_5.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon1_5.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon1_5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon1_5.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_5);
+                        if(iconSelected && !icon1_5Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon1_5.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon1_5Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon1_5Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon1_5Selected = true;
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_5);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon1_6.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon1_6.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon1_6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon1_6.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_6);
+                        if(iconSelected && !icon1_6Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon1_6.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon1_6Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon1_6Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon1_6Selected = true;
+                        showHeadings(icon1);
+                        showSubHeadings(icon1_6);
+                        break;
+                }
+                return true;
+            }
+        });
         /* ----------------------------------------------
          * Icon 2 Listeners
          * ---------------------------------------------- */
@@ -513,7 +823,446 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
+        /* ----------------------------------------------
+         * Icon 2_x Listeners
+         * ---------------------------------------------- */
+        icon2_1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
 
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_1.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_1.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_1);
+                        if(iconSelected && !icon2_1Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_1.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_1Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_1Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_1Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_1);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon2_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_2.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_2);
+                        if(iconSelected && !icon2_2Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_2.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_2Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_2Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_2Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_2);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon2_3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_3.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_3.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_3);
+                        if(iconSelected && !icon2_3Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_3.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_3Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_3Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_3Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon2_4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_4.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_4.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_4);
+                        if(iconSelected && !icon2_4Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_4.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_4Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_4Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_4Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_4);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon2_5.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_5.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_5.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_5);
+                        if(iconSelected && !icon2_5Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_5.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_5Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_5Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_5Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_5);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon2_6.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon2_6.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon2_6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon2_6.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_6);
+                        if(iconSelected && !icon2_6Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon2_6.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon2_6Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon2_6Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon2_6Selected = true;
+                        showHeadings(icon2);
+                        showSubHeadings(icon2_6);
+                        break;
+                }
+                return true;
+            }
+        });
         /* ----------------------------------------------
          * Icon 3 Listeners
          * ---------------------------------------------- */
@@ -584,7 +1333,373 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
+        /* ----------------------------------------------
+         * Icon 3_x Listeners
+         * ---------------------------------------------- */
+        icon3_1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
 
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon3_1.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon3_1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon3_1.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_1);
+                        if(iconSelected && !icon3_1Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon3_1.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon3_1Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon3_1Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon3_1Selected = true;
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_1);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon3_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon3_2.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon3_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon3_2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_2);
+                        if(iconSelected && !icon3_2Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon3_2.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon3_2Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon3_2Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon3_2Selected = true;
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_2);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon3_3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon3_3.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon3_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon3_3.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_3);
+                        if(iconSelected && !icon3_3Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon3_3.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon3_3Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon3_3Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon3_3Selected = true;
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon3_4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon3_4.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon3_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon3_4.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_4);
+                        if(iconSelected && !icon3_4Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon3_4.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon3_4Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon3_4Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon3_4Selected = true;
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_4);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon3_5.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon3_5.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon3_5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon3_5.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_5);
+                        if(iconSelected && !icon3_5Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon3_5.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon3_5Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon3_5Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon3_5Selected = true;
+                        showHeadings(icon3);
+                        showSubHeadings(icon3_5);
+                        break;
+                }
+                return true;
+            }
+        });
         /* ----------------------------------------------
          * Icon 4 Listeners
          * ---------------------------------------------- */
@@ -655,7 +1770,300 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
+        /* ----------------------------------------------
+         * Icon 4_x Listeners
+         * ---------------------------------------------- */
+        icon4_1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
 
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon4_1.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon4_1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon4_1.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_1);
+                        if(iconSelected && !icon4_1Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon4_1.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon4_1Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon4_1Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon4_1Selected = true;
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_1);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon4_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon4_2.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon4_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon4_2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_2);
+                        if(iconSelected && !icon4_2Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon4_2.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon4_2Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon4_2Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon4_2Selected = true;
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_2);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon4_3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon4_3.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon4_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon4_3.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_3);
+                        if(iconSelected && !icon4_3Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon4_3.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon4_3Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon4_3Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon4_3Selected = true;
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon4_4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon4_4.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon4_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon4_4.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_4);
+                        if(iconSelected && !icon4_4Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon4_4.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon4_4Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon4_4Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon4_4Selected = true;
+                        showHeadings(icon4);
+                        showSubHeadings(icon4_4);
+                        break;
+                }
+                return true;
+            }
+        });
         /* ----------------------------------------------
          * Icon 5 Listeners
          * ---------------------------------------------- */
@@ -726,11 +2134,10 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
-
         /* ----------------------------------------------
-         * Icon 6 Listeners
+         * Icon 4_x Listeners
          * ---------------------------------------------- */
-        icon6.setOnTouchListener(new View.OnTouchListener() {
+        icon5_1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -739,12 +2146,12 @@ public class MainActivity extends AppCompatActivity{
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
-                    icon6.startDrag(data, shadowBuilder, button, 0);
+                    icon5_1.startDrag(data, shadowBuilder, button, 0);
                 }
                 return true;
             }
         });
-        icon6.setOnLongClickListener(new View.OnLongClickListener() {
+        icon5_1.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
@@ -757,41 +2164,411 @@ public class MainActivity extends AppCompatActivity{
                 return false;
             }
         });
-        icon6.setOnDragListener(new View.OnDragListener() {
+        icon5_1.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 switch(event.getAction()) {
                     case DragEvent.ACTION_DRAG_ENTERED:
-                        showHeadings(icon6);
-                        if(iconSelected && !icon6Selected) {
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_1);
+                        if(iconSelected && !icon5_1Selected) {
                             deselect();
                             hideHeadings();
+                            hideSubHeadings();
                         }
-                        icon6.setBackground(pink_circle);
+                        icon5_1.setBackground(pink_circle);
                         break;
                     case DragEvent.ACTION_DRAG_EXITED:
                         deselect();
                         iconSelected = false;
                         hideHeadings();
+                        hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
                         if(!iconSelected) {
                             deselect();
-                            expandOuter(false, 6);
+                            expandOuter(false,0);
                             if(innerIsExpanded) {
-                                expandInner(false, 6);
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
                             }
-                            icon6Selected = false;
-                            hideHeadings();
+                            icon5_1Selected = false;
                         }
                         break;
                     case DragEvent.ACTION_DROP:
-                        if(!icon6Selected && !innerIsExpanded) {
-                            expandInner(true, 6);
+                        if(!icon5_1Selected && !innerIsExpanded) {
+                            expandInner(true,0);
                         }
                         iconSelected = true;
-                        icon6Selected = true;
-                        showHeadings(icon6);
+                        icon5_1Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_1);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon5_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon5_2.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon5_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon5_2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_2);
+                        if(iconSelected && !icon5_2Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon5_2.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon5_2Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon5_2Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon5_2Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_2);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon5_3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon5_3.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon5_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon5_3.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_3);
+                        if(iconSelected && !icon5_3Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon5_3.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon5_3Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon5_3Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon5_3Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon5_4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon5_4.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon5_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon5_4.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_4);
+                        if(iconSelected && !icon5_4Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon5_4.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon5_4Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon5_4Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon5_4Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_4);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon5_5.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon5_5.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon5_5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon5_5.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_5);
+                        if(iconSelected && !icon5_5Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon5_5.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon5_5Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon5_5Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon5_5Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_5);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        icon5_6.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Get the time the user presses on the screen
+                    touchStartTime = System.currentTimeMillis();
+
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
+                    icon5_6.startDrag(data, shadowBuilder, button, 0);
+                }
+                return true;
+            }
+        });
+        icon5_6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(button);
+                v.startDrag(dragData, null,null,0);
+
+                return false;
+            }
+        });
+        icon5_6.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_6);
+                        if(iconSelected && !icon5_6Selected) {
+                            deselect();
+                            hideHeadings();
+                            hideSubHeadings();
+                        }
+                        icon5_6.setBackground(pink_circle);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        deselect();
+                        iconSelected = false;
+                        hideHeadings();
+                        hideSubHeadings();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if(!iconSelected) {
+                            deselect();
+                            expandOuter(false,0);
+                            if(innerIsExpanded) {
+                                expandInner(false,0);
+                                hideHeadings();
+                                hideSubHeadings();
+                            }
+                            icon5_6Selected = false;
+                        }
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if(!icon5_6Selected && !innerIsExpanded) {
+                            expandInner(true,0);
+                        }
+                        iconSelected = true;
+                        icon5_6Selected = true;
+                        showHeadings(icon5);
+                        showSubHeadings(icon5_6);
                         break;
                 }
                 return true;
@@ -823,9 +2600,6 @@ public class MainActivity extends AppCompatActivity{
             icon5.setImageResource(R.drawable.icon5);
             icon5.setScaleX(1);
             icon5.setScaleY(1);
-            icon6.setImageResource(R.drawable.icon6);
-            icon6.setScaleX(1);
-            icon6.setScaleY(1);
 
             outerIsExpanded = true;
         }
@@ -845,8 +2619,6 @@ public class MainActivity extends AppCompatActivity{
             icon4.setScaleY(0);
             icon5.setScaleX(0);
             icon5.setScaleY(0);
-            icon5.setScaleX(0);
-            icon6.setScaleY(0);
 
             icon1_1.setScaleX(0);
             icon1_1.setScaleY(0);
@@ -860,6 +2632,52 @@ public class MainActivity extends AppCompatActivity{
             icon1_5.setScaleY(0);
             icon1_6.setScaleX(0);
             icon1_6.setScaleY(0);
+
+            icon2_1.setScaleX(0);
+            icon2_1.setScaleY(0);
+            icon2_2.setScaleX(0);
+            icon2_2.setScaleY(0);
+            icon2_3.setScaleX(0);
+            icon2_3.setScaleY(0);
+            icon2_4.setScaleX(0);
+            icon2_4.setScaleY(0);
+            icon2_5.setScaleX(0);
+            icon2_5.setScaleY(0);
+            icon2_6.setScaleX(0);
+            icon2_6.setScaleY(0);
+
+            icon3_1.setScaleX(0);
+            icon3_1.setScaleY(0);
+            icon3_2.setScaleX(0);
+            icon3_2.setScaleY(0);
+            icon3_3.setScaleX(0);
+            icon3_3.setScaleY(0);
+            icon3_4.setScaleX(0);
+            icon3_4.setScaleY(0);
+            icon3_5.setScaleX(0);
+            icon3_5.setScaleY(0);
+
+            icon4_1.setScaleX(0);
+            icon4_1.setScaleY(0);
+            icon4_2.setScaleX(0);
+            icon4_2.setScaleY(0);
+            icon4_3.setScaleX(0);
+            icon4_3.setScaleY(0);
+            icon4_4.setScaleX(0);
+            icon4_4.setScaleY(0);
+
+            icon5_1.setScaleX(0);
+            icon5_1.setScaleY(0);
+            icon5_2.setScaleX(0);
+            icon5_2.setScaleY(0);
+            icon5_3.setScaleX(0);
+            icon5_3.setScaleY(0);
+            icon5_4.setScaleX(0);
+            icon5_4.setScaleY(0);
+            icon5_5.setScaleX(0);
+            icon5_5.setScaleY(0);
+            icon5_6.setScaleX(0);
+            icon5_6.setScaleY(0);
             outerIsExpanded = false;
         }
     }
@@ -880,16 +2698,16 @@ public class MainActivity extends AppCompatActivity{
             // Change the position of the menu icons
             icon1_1.setX(icon1.getX());
             icon1_1.setY(icon1.getY() - 200f);
-            icon1_2.setX(icon2.getX() + 150f);
-            icon1_2.setY(icon2.getY() - 100f);
-            icon1_3.setX(icon3.getX() + 150f);
-            icon1_3.setY(icon3.getY() + 100f);
-            icon1_4.setX(icon4.getX());
-            icon1_4.setY(icon4.getY() + 175f);
-            icon1_5.setX(icon5.getX() - 150f);
-            icon1_5.setY(icon5.getY() + 100f);
-            icon1_6.setX(icon6.getX() - 150f);
-            icon1_6.setY(icon6.getY() - 100f);
+            icon1_2.setX(icon2.getX() + 120f);
+            icon1_2.setY(icon2.getY() - 150f);
+            icon1_3.setX(icon2.getX() + 122f);
+            icon1_3.setY(icon3.getY() + 30f);
+            icon1_4.setX(icon1.getX());
+            icon1_4.setY(icon4.getY() + 200f);
+            icon1_5.setX(icon4.getX() - 190f);
+            icon1_5.setY(icon5.getY() + 225f);
+            icon1_6.setX(icon4.getX() - 190f);
+            icon1_6.setY(icon5.getY() - 150f);
 
             deselectInnerIcons();
             showHeadings(icon1);
@@ -898,177 +2716,7 @@ public class MainActivity extends AppCompatActivity{
 
             innerIsExpanded = true;
         }
-//        else if(expand && icon == 2) {
-//            // Expand inner menu if requirements are met
-//            // Create a scale animation to enlarge the outer menu
-//            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//
-//            expandOuter.setDuration(200);
-//            expandOuter.setFillAfter(true);
-//
-//            outerMenu.startAnimation(expandOuter);
-//
-//            // Make the inner menu visible
-//            innerMenu.setVisibility(View.VISIBLE);
-//            icon2Visible ();
-//            // Change the position of the menu icons
-//            icon2_1.setX(icon1.getX());
-//            icon2_1.setY(icon1.getY() - 200f);
-//            icon2_2.setX(icon2.getX() + 150f);
-//            icon2_2.setY(icon2.getY() - 100f);
-//            icon2_3.setX(icon3.getX() + 150f);
-//            icon2_3.setY(icon3.getY() + 100f);
-//            icon2_4.setX(icon4.getX());
-//            icon2_4.setY(icon4.getY() + 175f);
-//            icon2_5.setX(icon5.getX() - 150f);
-//            icon2_5.setY(icon5.getY() + 100f);
-//            icon2_6.setX(icon6.getX() - 150f);
-//            icon2_6.setY(icon6.getY() - 100f);
-//
-//            deselectInnerIcons();
-//            showHeadings(icon2);
-//            showSubHeadings(icon2_1);
-//            icon2_1.setBackground(pink_circle);
-//
-//            innerIsExpanded = true;
-//        }
-//        else if(expand && icon == 3) {
-//            // Expand inner menu if requirements are met
-//            // Create a scale animation to enlarge the outer menu
-//            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//
-//            expandOuter.setDuration(200);
-//            expandOuter.setFillAfter(true);
-//
-//            outerMenu.startAnimation(expandOuter);
-//
-//            // Make the inner menu visible
-//            innerMenu.setVisibility(View.VISIBLE);
-//            icon3Visible ();
-//            // Change the position of the menu icons
-//            icon3_1.setX(icon1.getX());
-//            icon3_1.setY(icon1.getY() - 200f);
-//            icon3_2.setX(icon2.getX() + 150f);
-//            icon3_2.setY(icon2.getY() - 100f);
-//            icon3_3.setX(icon3.getX() + 150f);
-//            icon3_3.setY(icon3.getY() + 100f);
-//            icon3_4.setX(icon4.getX());
-//            icon3_4.setY(icon4.getY() + 175f);
-//            icon3_5.setX(icon5.getX() - 150f);
-//            icon3_5.setY(icon5.getY() + 100f);
-//            icon3_6.setX(icon6.getX() - 150f);
-//            icon3_6.setY(icon6.getY() - 100f);
-//
-//            deselectInnerIcons();
-//            showHeadings(icon3);
-//            showSubHeadings(icon3_1);
-//            icon3_1.setBackground(pink_circle);
-//
-//            innerIsExpanded = true;
-//        }
-//        else if(expand && icon == 4) {
-//            // Expand inner menu if requirements are met
-//            // Create a scale animation to enlarge the outer menu
-//            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//
-//            expandOuter.setDuration(200);
-//            expandOuter.setFillAfter(true);
-//
-//            outerMenu.startAnimation(expandOuter);
-//
-//            // Make the inner menu visible
-//            innerMenu.setVisibility(View.VISIBLE);
-//            icon4Visible ();
-//            // Change the position of the menu icons
-//            icon4_1.setX(icon1.getX());
-//            icon4_1.setY(icon1.getY() - 200f);
-//            icon4_2.setX(icon2.getX() + 150f);
-//            icon4_2.setY(icon2.getY() - 100f);
-//            icon4_3.setX(icon3.getX() + 150f);
-//            icon4_3.setY(icon3.getY() + 100f);
-//            icon4_4.setX(icon4.getX());
-//            icon4_4.setY(icon4.getY() + 175f);
-//            icon4_5.setX(icon5.getX() - 150f);
-//            icon4_5.setY(icon5.getY() + 100f);
-//            icon4_6.setX(icon6.getX() - 150f);
-//            icon4_6.setY(icon6.getY() - 100f);
-//
-//            deselectInnerIcons();
-//            showHeadings(icon4);
-//            showSubHeadings(icon4_1);
-//            icon4_1.setBackground(pink_circle);
-//
-//            innerIsExpanded = true;
-//        }
-//        else if(expand && icon == 5) {
-//            // Expand inner menu if requirements are met
-//            // Create a scale animation to enlarge the outer menu
-//            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//
-//            expandOuter.setDuration(200);
-//            expandOuter.setFillAfter(true);
-//
-//            outerMenu.startAnimation(expandOuter);
-//
-//            // Make the inner menu visible
-//            innerMenu.setVisibility(View.VISIBLE);
-//            icon5Visible ();
-//            // Change the position of the menu icons
-//            icon5_1.setX(icon1.getX());
-//            icon5_1.setY(icon1.getY() - 200f);
-//            icon5_2.setX(icon2.getX() + 150f);
-//            icon5_2.setY(icon2.getY() - 100f);
-//            icon5_3.setX(icon3.getX() + 150f);
-//            icon5_3.setY(icon3.getY() + 100f);
-//            icon5_4.setX(icon4.getX());
-//            icon5_4.setY(icon4.getY() + 175f);
-//            icon5_5.setX(icon5.getX() - 150f);
-//            icon5_5.setY(icon5.getY() + 100f);
-//            icon5_6.setX(icon6.getX() - 150f);
-//            icon5_6.setY(icon6.getY() - 100f);
-//
-//            deselectInnerIcons();
-//            showHeadings(icon5);
-//            showSubHeadings(icon5_1);
-//            icon5_1.setBackground(pink_circle);
-//
-//            innerIsExpanded = true;
-//        }
-//        else if(expand && icon == 6) {
-//            // Expand inner menu if requirements are met
-//            // Create a scale animation to enlarge the outer menu
-//            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//
-//            expandOuter.setDuration(200);
-//            expandOuter.setFillAfter(true);
-//
-//            outerMenu.startAnimation(expandOuter);
-//
-//            // Make the inner menu visible
-//            innerMenu.setVisibility(View.VISIBLE);
-//            icon6Visible ();
-//            // Change the position of the menu icons
-//            icon6_1.setX(icon1.getX());
-//            icon6_1.setY(icon1.getY() - 200f);
-//            icon6_2.setX(icon2.getX() + 150f);
-//            icon6_2.setY(icon2.getY() - 100f);
-//            icon6_3.setX(icon3.getX() + 150f);
-//            icon6_3.setY(icon3.getY() + 100f);
-//            icon6_4.setX(icon4.getX());
-//            icon6_4.setY(icon4.getY() + 175f);
-//            icon6_5.setX(icon5.getX() - 150f);
-//            icon6_5.setY(icon5.getY() + 100f);
-//            icon6_6.setX(icon6.getX() - 150f);
-//            icon6_6.setY(icon6.getY() - 100f);
-//
-//            deselectInnerIcons();
-//            showHeadings(icon6);
-//            showSubHeadings(icon6_1);
-//            icon6_1.setBackground(pink_circle);
-//
-//            innerIsExpanded = true;
-//        }
-        else if(expand && icon > 1) {
+        else if(expand && icon == 2) {
             // Expand inner menu if requirements are met
             // Create a scale animation to enlarge the outer menu
             ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -1080,20 +2728,121 @@ public class MainActivity extends AppCompatActivity{
 
             // Make the inner menu visible
             innerMenu.setVisibility(View.VISIBLE);
+            icon2Visible ();
+            // Change the position of the menu icons
+            icon2_1.setX(icon1.getX());
+            icon2_1.setY(icon1.getY() - 200f);
+            icon2_2.setX(icon2.getX() + 120f);
+            icon2_2.setY(icon2.getY() - 150f);
+            icon2_3.setX(icon2.getX() + 122f);
+            icon2_3.setY(icon3.getY() + 30f);
+            icon2_4.setX(icon1.getX());
+            icon2_4.setY(icon4.getY() + 200f);
+            icon2_5.setX(icon4.getX() - 190f);
+            icon2_5.setY(icon5.getY() + 225f);
+            icon2_6.setX(icon4.getX() - 190f);
+            icon2_6.setY(icon5.getY() - 150f);
 
-            // Change the position of the outer menu icons
-//            iconX_1.setX(icon1.getX());
-//            iconX_1.setY(icon1.getY() - 200f);
-//            iconX_2.setX(icon2.getX() + 150f);
-//            iconX_2.setY(icon2.getY() - 100f);
-//            iconX_3.setX(icon3.getX() + 150f);
-//            iconX_3.setY(icon3.getY() + 100f);
-//            iconX_4.setX(icon4.getX());
-//            iconX_4.setY(icon4.getY() + 175f);
-//            iconX_5.setX(icon5.getX() - 150f);
-//            iconX_5.setY(icon5.getY() + 100f);
-//            iconX_6.setX(icon6.getX() - 150f);
-//            iconX_6.setY(icon6.getY() - 100f);
+            deselectInnerIcons();
+            showHeadings(icon2);
+            showSubHeadings(icon2_1);
+            icon2_1.setBackground(pink_circle);
+
+            innerIsExpanded = true;
+        }
+        else if(expand && icon == 3) {
+            // Expand inner menu if requirements are met
+            // Create a scale animation to enlarge the outer menu
+            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+            expandOuter.setDuration(200);
+            expandOuter.setFillAfter(true);
+
+            outerMenu.startAnimation(expandOuter);
+
+            // Make the inner menu visible
+            innerMenu.setVisibility(View.VISIBLE);
+            icon3Visible ();
+            // Change the position of the menu icons
+            icon3_1.setX(icon1.getX());
+            icon3_1.setY(icon1.getY() - 200f);
+            icon3_2.setX(icon2.getX() + 150f);
+            icon3_2.setY(icon2.getY() - 100f);
+            icon3_3.setX(icon2.getX() + 75f);
+            icon3_3.setY(icon3.getY() + 100f);
+            icon3_4.setX(icon4.getX() - 120f);
+            icon3_4.setY(icon4.getY() + 105f);
+            icon3_5.setX(icon4.getX() - 210f);
+            icon3_5.setY(icon5.getY() - 100f);
+
+            deselectInnerIcons();
+            showHeadings(icon3);
+            showSubHeadings(icon3_1);
+            icon3_1.setBackground(pink_circle);
+
+            innerIsExpanded = true;
+        }
+        else if(expand && icon == 4) {
+            // Expand inner menu if requirements are met
+            // Create a scale animation to enlarge the outer menu
+            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+            expandOuter.setDuration(200);
+            expandOuter.setFillAfter(true);
+
+            outerMenu.startAnimation(expandOuter);
+
+            // Make the inner menu visible
+            innerMenu.setVisibility(View.VISIBLE);
+            icon4Visible ();
+            // Change the position of the menu icons
+            icon4_1.setX(icon1.getX());
+            icon4_1.setY(icon1.getY() - 200f);
+            icon4_2.setX(icon2.getX() + 175f);
+            icon4_2.setY(icon2.getY() + 30f);
+            icon4_3.setX(icon1.getX());
+            icon4_3.setY(icon4.getY() + 200f);
+            icon4_4.setX(icon5.getX() - 190);
+            icon4_4.setY(icon5.getY() + 30f);
+
+            deselectInnerIcons();
+            showHeadings(icon4);
+            showSubHeadings(icon4_1);
+            icon4_1.setBackground(pink_circle);
+
+            innerIsExpanded = true;
+        }
+        else if(expand && icon == 5) {
+            // Expand inner menu if requirements are met
+            // Create a scale animation to enlarge the outer menu
+            ScaleAnimation expandOuter = new ScaleAnimation(1.0f, 1.7f, 1.0f, 1.7f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+            expandOuter.setDuration(200);
+            expandOuter.setFillAfter(true);
+
+            outerMenu.startAnimation(expandOuter);
+
+            // Make the inner menu visible
+            innerMenu.setVisibility(View.VISIBLE);
+            icon5Visible ();
+            // Change the position of the menu icons
+            icon5_1.setX(icon1.getX());
+            icon5_1.setY(icon1.getY() - 200f);
+            icon5_2.setX(icon2.getX() + 120f);
+            icon5_2.setY(icon2.getY() - 150f);
+            icon5_3.setX(icon2.getX() + 122f);
+            icon5_3.setY(icon3.getY() + 30f);
+            icon5_4.setX(icon1.getX());
+            icon5_4.setY(icon4.getY() + 200f);
+            icon5_5.setX(icon4.getX() - 190f);
+            icon5_5.setY(icon5.getY() + 225f);
+            icon5_6.setX(icon4.getX() - 190f);
+            icon5_6.setY(icon5.getY() - 150f);
+
+            deselectInnerIcons();
+            showHeadings(icon5);
+            showSubHeadings(icon5_1);
+            icon5_1.setBackground(pink_circle);
 
             innerIsExpanded = true;
         }
@@ -1118,103 +2867,20 @@ public class MainActivity extends AppCompatActivity{
      * ---------------------------------------------- */
     private void deselect() {
         // Set all backgrounds to empty
-        icon1.setBackground(null);
-        icon2.setBackground(null);
-        icon3.setBackground(null);
-        icon4.setBackground(null);
-        icon5.setBackground(null);
-        icon6.setBackground(null);
+        icon1.setBackground(null);icon2.setBackground(null);icon3.setBackground(null);icon4.setBackground(null);icon5.setBackground(null);
+        icon1Selected = false;icon2Selected = false;icon3Selected = false;icon4Selected = false;icon5Selected = false;
 
-        icon1Selected = false;
-        icon2Selected = false;
-        icon3Selected = false;
-        icon4Selected = false;
-        icon5Selected = false;
-        icon6Selected = false;
+        icon1_1.setBackground(null);icon1_2.setBackground(null);icon1_3.setBackground(null);icon1_4.setBackground(null);icon1_5.setBackground(null);icon1_6.setBackground(null);
+        icon2_1.setBackground(null);icon2_2.setBackground(null);icon2_3.setBackground(null);icon2_4.setBackground(null);icon2_5.setBackground(null);icon2_6.setBackground(null);
+        icon3_1.setBackground(null);icon3_2.setBackground(null);icon3_3.setBackground(null);icon3_4.setBackground(null);icon3_5.setBackground(null);
+        icon4_1.setBackground(null);icon4_2.setBackground(null);icon4_3.setBackground(null);icon4_4.setBackground(null);
+        icon5_1.setBackground(null);icon5_2.setBackground(null);icon5_3.setBackground(null);icon5_4.setBackground(null);icon5_5.setBackground(null);icon5_6.setBackground(null);
 
-        icon1_1.setBackground(null);
-//        icon1_2.setBackground(null);
-//        icon1_3.setBackground(null);
-//        icon1_4.setBackground(null);
-//        icon1_5.setBackground(null);
-//        icon1_6.setBackground(null);
-
-//        icon2_1.setBackground(null);
-//        icon2_2.setBackground(null);
-//        icon2_3.setBackground(null);
-//        icon2_4.setBackground(null);
-//        icon2_5.setBackground(null);
-//        icon2_6.setBackground(null);
-
-//        icon3_1.setBackground(null);
-//        icon3_2.setBackground(null);
-//        icon3_3.setBackground(null);
-//        icon3_4.setBackground(null);
-//        icon3_5.setBackground(null);
-//        icon3_6.setBackground(null);
-
-//        icon4_1.setBackground(null);
-//        icon4_2.setBackground(null);
-//        icon4_3.setBackground(null);
-//        icon4_4.setBackground(null);
-//        icon4_5.setBackground(null);
-//        icon4_6.setBackground(null);
-
-//        icon5_1.setBackground(null);
-//        icon5_2.setBackground(null);
-//        icon5_3.setBackground(null);
-//        icon5_4.setBackground(null);
-//        icon5_5.setBackground(null);
-//        icon5_6.setBackground(null);
-
-//        icon6_1.setBackground(null);
-//        icon6_2.setBackground(null);
-//        icon6_3.setBackground(null);
-//        icon6_4.setBackground(null);
-//        icon6_5.setBackground(null);
-//        icon6_6.setBackground(null);
-
-        icon1_1Selected = false;
-//        icon1_2Selected = false;
-//        icon1_3Selected = false;
-//        icon1_4Selected = false;
-//        icon1_5Selected = false;
-//        icon1_6Selected = false;
-//
-//        icon2_1Selected = false;
-//        icon2_2Selected = false;
-//        icon2_3Selected = false;
-//        icon2_4Selected = false;
-//        icon2_5Selected = false;
-//        icon2_6Selected = false;
-//
-//        icon3_1Selected = false;
-//        icon3_2Selected = false;
-//        icon3_3Selected = false;
-//        icon3_4Selected = false;
-//        icon3_5Selected = false;
-//        icon3_6Selected = false;
-//
-//        icon4_1Selected = false;
-//        icon4_2Selected = false;
-//        icon4_3Selected = false;
-//        icon4_4Selected = false;
-//        icon4_5Selected = false;
-//        icon4_6Selected = false;
-//
-//        icon5_1Selected = false;
-//        icon5_2Selected = false;
-//        icon5_3Selected = false;
-//        icon5_4Selected = false;
-//        icon5_5Selected = false;
-//        icon5_6Selected = false;
-//
-//        icon6_1Selected = false;
-//        icon6_2Selected = false;
-//        icon6_3Selected = false;
-//        icon6_4Selected = false;
-//        icon6_5Selected = false;
-//        icon6_6Selected = false;
+        icon1_1Selected = false;icon1_2Selected = false;icon1_3Selected = false;icon1_4Selected = false;icon1_5Selected = false;icon1_6Selected = false;
+        icon2_1Selected = false;icon2_2Selected = false;icon2_3Selected = false;icon2_4Selected = false;icon2_5Selected = false;icon2_6Selected = false;
+        icon3_1Selected = false;icon3_2Selected = false;icon3_3Selected = false;icon3_4Selected = false;icon3_5Selected = false;
+        icon4_1Selected = false;icon4_2Selected = false;icon4_3Selected = false;icon4_4Selected = false;
+        icon5_1Selected = false;icon5_2Selected = false;icon5_3Selected = false;icon5_4Selected = false;icon5_5Selected = false;icon5_6Selected = false;
     }
 
     public void showHeadings(ImageView icon) {
@@ -1223,94 +2889,72 @@ public class MainActivity extends AppCompatActivity{
         else if (icon == icon3) {findViewById(R.id.icon3Heading).setVisibility(View.VISIBLE);}
         else if (icon == icon4) {findViewById(R.id.icon4Heading).setVisibility(View.VISIBLE);}
         else if (icon == icon5) {findViewById(R.id.icon5Heading).setVisibility(View.VISIBLE);}
-        else if (icon == icon6) {findViewById(R.id.icon6Heading).setVisibility(View.VISIBLE);}
     }
     public void showSubHeadings(ImageView icon) {
         if(icon == icon1_1) {findViewById(R.id.icon1_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon1_2) {findViewById(R.id.icon1_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon1_3) {findViewById(R.id.icon1_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon1_4) {findViewById(R.id.icon1_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon1_5) {findViewById(R.id.icon1_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon1_6) {findViewById(R.id.icon1_6Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon1_2) {findViewById(R.id.icon1_2Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon1_3) {findViewById(R.id.icon1_3Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon1_4) {findViewById(R.id.icon1_4Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon1_5) {findViewById(R.id.icon1_5Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon1_6) {findViewById(R.id.icon1_6Heading).setVisibility(View.VISIBLE);}
 
-//        if(icon == icon2_1) {findViewById(R.id.icon2_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon2_2) {findViewById(R.id.icon2_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon2_3) {findViewById(R.id.icon2_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon2_4) {findViewById(R.id.icon2_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon2_5) {findViewById(R.id.icon2_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon2_6) {findViewById(R.id.icon2_6Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_1) {findViewById(R.id.icon2_1Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_2) {findViewById(R.id.icon2_2Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_3) {findViewById(R.id.icon2_3Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_4) {findViewById(R.id.icon2_4Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_5) {findViewById(R.id.icon2_5Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon2_6) {findViewById(R.id.icon2_6Heading).setVisibility(View.VISIBLE);}
 
-//        if(icon == icon3_1) {findViewById(R.id.icon3_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon3_2) {findViewById(R.id.icon3_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon3_3) {findViewById(R.id.icon3_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon3_4) {findViewById(R.id.icon3_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon3_5) {findViewById(R.id.icon3_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon3_6) {findViewById(R.id.icon3_6Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon3_1) {findViewById(R.id.icon3_1Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon3_2) {findViewById(R.id.icon3_2Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon3_3) {findViewById(R.id.icon3_3Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon3_4) {findViewById(R.id.icon3_4Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon3_5) {findViewById(R.id.icon3_5Heading).setVisibility(View.VISIBLE);}
 
-//        if(icon == icon4_1) {findViewById(R.id.icon4_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon4_2) {findViewById(R.id.icon4_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon4_3) {findViewById(R.id.icon4_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon4_4) {findViewById(R.id.icon4_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon4_5) {findViewById(R.id.icon4_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon4_6) {findViewById(R.id.icon4_6Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon4_1) {findViewById(R.id.icon4_1Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon4_2) {findViewById(R.id.icon4_2Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon4_3) {findViewById(R.id.icon4_3Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon4_4) {findViewById(R.id.icon4_4Heading).setVisibility(View.VISIBLE);}
 
-//        if(icon == icon5_1) {findViewById(R.id.icon5_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon5_2) {findViewById(R.id.icon5_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon5_3) {findViewById(R.id.icon5_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon5_4) {findViewById(R.id.icon5_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon5_5) {findViewById(R.id.icon5_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon5_6) {findViewById(R.id.icon5_6Heading).setVisibility(View.VISIBLE);}
-
-//        if(icon == icon6_1) {findViewById(R.id.icon6_1Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon6_2) {findViewById(R.id.icon6_2Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon6_3) {findViewById(R.id.icon6_3Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon6_4) {findViewById(R.id.icon6_4Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon6_5) {findViewById(R.id.icon6_5Heading).setVisibility(View.VISIBLE);}
-//        if(icon == icon6_6) {findViewById(R.id.icon6_6Heading).setVisibility(View.VISIBLE);}
-
+        if(icon == icon5_1) {findViewById(R.id.icon5_1Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon5_2) {findViewById(R.id.icon5_2Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon5_3) {findViewById(R.id.icon5_3Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon5_4) {findViewById(R.id.icon5_4Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon5_5) {findViewById(R.id.icon5_5Heading).setVisibility(View.VISIBLE);}
+        if(icon == icon5_6) {findViewById(R.id.icon5_6Heading).setVisibility(View.VISIBLE);}
     }
     public void hideSubHeadings(){
         findViewById(R.id.icon1_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon1_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon1_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon1_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon1_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon1_6Heading).setVisibility(View.INVISIBLE);
-//
-//        findViewById(R.id.icon2_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon2_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon2_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon2_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon2_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon2_6Heading).setVisibility(View.INVISIBLE);
-//
-//        findViewById(R.id.icon3_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon3_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon3_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon3_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon3_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon3_6Heading).setVisibility(View.INVISIBLE);
-//
-//        findViewById(R.id.icon4_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon4_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon4_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon4_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon4_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon4_6Heading).setVisibility(View.INVISIBLE);
-//
-//        findViewById(R.id.icon5_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon5_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon5_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon5_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon5_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon5_6Heading).setVisibility(View.INVISIBLE);
-//
-//        findViewById(R.id.icon6_1Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon6_2Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon6_3Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon6_4Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon6_5Heading).setVisibility(View.INVISIBLE);
-//        findViewById(R.id.icon6_6Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon1_2Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon1_3Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon1_4Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon1_5Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon1_6Heading).setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.icon2_1Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon2_2Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon2_3Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon2_4Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon2_5Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon2_6Heading).setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.icon3_1Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon3_2Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon3_3Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon3_4Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon3_5Heading).setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.icon4_1Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon4_2Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon4_3Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon4_4Heading).setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.icon5_1Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon5_2Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon5_3Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon5_4Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon5_5Heading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.icon5_6Heading).setVisibility(View.INVISIBLE);
     }
     public void hideHeadings() {
         findViewById(R.id.icon1Heading).setVisibility(View.INVISIBLE);
@@ -1318,120 +2962,58 @@ public class MainActivity extends AppCompatActivity{
         findViewById(R.id.icon3Heading).setVisibility(View.INVISIBLE);
         findViewById(R.id.icon4Heading).setVisibility(View.INVISIBLE);
         findViewById(R.id.icon5Heading).setVisibility(View.INVISIBLE);
-        findViewById(R.id.icon6Heading).setVisibility(View.INVISIBLE);
     }
     public void icon1Visible(){
-        icon1_1.setScaleX(1);
-        icon1_1.setScaleY(1);
-        icon1_2.setScaleX(1);
-        icon1_2.setScaleY(1);
-        icon1_3.setScaleX(1);
-        icon1_3.setScaleY(1);
-        icon1_4.setScaleX(1);
-        icon1_4.setScaleY(1);
-        icon1_5.setScaleX(1);
-        icon1_5.setScaleY(1);
-        icon1_6.setScaleX(1);
-        icon1_6.setScaleY(1);
+        icon1_1.setScaleX(1); icon1_1.setScaleY(1);
+        icon1_2.setScaleX(1); icon1_2.setScaleY(1);
+        icon1_3.setScaleX(1); icon1_3.setScaleY(1);
+        icon1_4.setScaleX(1); icon1_4.setScaleY(1);
+        icon1_5.setScaleX(1); icon1_5.setScaleY(1);
+        icon1_6.setScaleX(1); icon1_6.setScaleY(1);
     }
-//    public void icon2Visible(){
-//        icon2_1.setScaleX(1);
-//        icon2_1.setScaleY(1);
-//        icon2_2.setScaleX(1);
-//        icon2_2.setScaleY(1);
-//        icon2_3.setScaleX(1);
-//        icon2_3.setScaleY(1);
-//        icon2_4.setScaleX(1);
-//        icon2_4.setScaleY(1);
-//        icon2_5.setScaleX(1);
-//        icon2_5.setScaleY(1);
-//        icon2_6.setScaleX(1);
-//        icon2_6.setScaleY(1);
-//    }
-//    public void icon3Visible(){
-//        icon3_1.setScaleX(1);
-//        icon3_1.setScaleY(1);
-//        icon3_2.setScaleX(1);
-//        icon3_2.setScaleY(1);
-//        icon3_3.setScaleX(1);
-//        icon3_3.setScaleY(1);
-//        icon3_4.setScaleX(1);
-//        icon3_4.setScaleY(1);
-//        icon3_5.setScaleX(1);
-//        icon3_5.setScaleY(1);
-//        icon3_6.setScaleX(1);
-//        icon3_6.setScaleY(1);
-//    }
-//    public void icon4Visible(){
-//        icon4_1.setScaleX(1);
-//        icon4_1.setScaleY(1);
-//        icon4_2.setScaleX(1);
-//        icon4_2.setScaleY(1);
-//        icon4_3.setScaleX(1);
-//        icon4_3.setScaleY(1);
-//        icon4_4.setScaleX(1);
-//        icon4_4.setScaleY(1);
-//        icon4_5.setScaleX(1);
-//        icon4_5.setScaleY(1);
-//        icon4_6.setScaleX(1);
-//        icon4_6.setScaleY(1);
-//    }
-//    public void icon5Visible(){
-//        icon5_1.setScaleX(1);
-//        icon5_1.setScaleY(1);
-//        icon5_2.setScaleX(1);
-//        icon5_2.setScaleY(1);
-//        icon5_3.setScaleX(1);
-//        icon5_3.setScaleY(1);
-//        icon5_4.setScaleX(1);
-//        icon5_4.setScaleY(1);
-//        icon5_5.setScaleX(1);
-//        icon5_5.setScaleY(1);
-//        icon5_6.setScaleX(1);
-//        icon5_6.setScaleY(1);
-//    }
-//    public void icon6Visible(){
-//        icon6_1.setScaleX(1);
-//        icon6_1.setScaleY(1);
-//        icon6_2.setScaleX(1);
-//        icon6_2.setScaleY(1);
-//        icon6_3.setScaleX(1);
-//        icon6_3.setScaleY(1);
-//        icon6_4.setScaleX(1);
-//        icon6_4.setScaleY(1);
-//        icon6_5.setScaleX(1);
-//        icon6_5.setScaleY(1);
-//        icon6_6.setScaleX(1);
-//        icon6_6.setScaleY(1);
-//    }
+    public void icon2Visible(){
+        icon2_1.setScaleX(1); icon2_1.setScaleY(1);
+        icon2_2.setScaleX(1); icon2_2.setScaleY(1);
+        icon2_3.setScaleX(1); icon2_3.setScaleY(1);
+        icon2_4.setScaleX(1); icon2_4.setScaleY(1);
+        icon2_5.setScaleX(1); icon2_5.setScaleY(1);
+        icon2_6.setScaleX(1); icon2_6.setScaleY(1);
+    }
+    public void icon3Visible(){
+        icon3_1.setScaleX(1); icon3_1.setScaleY(1);
+        icon3_2.setScaleX(1); icon3_2.setScaleY(1);
+        icon3_3.setScaleX(1); icon3_3.setScaleY(1);
+        icon3_4.setScaleX(1); icon3_4.setScaleY(1);
+        icon3_5.setScaleX(1); icon3_5.setScaleY(1);
+    }
+    public void icon4Visible(){
+        icon4_1.setScaleX(1); icon4_1.setScaleY(1);
+        icon4_2.setScaleX(1); icon4_2.setScaleY(1);
+        icon4_3.setScaleX(1); icon4_3.setScaleY(1);
+        icon4_4.setScaleX(1); icon4_4.setScaleY(1);
+    }
+    public void icon5Visible(){
+        icon5_1.setScaleX(1); icon5_1.setScaleY(1);
+        icon5_2.setScaleX(1); icon5_2.setScaleY(1);
+        icon5_3.setScaleX(1); icon5_3.setScaleY(1);
+        icon5_4.setScaleX(1); icon5_4.setScaleY(1);
+        icon5_5.setScaleX(1); icon5_5.setScaleY(1);
+        icon5_6.setScaleX(1); icon5_6.setScaleY(1);
+    }
 
     private void deselectInnerIcons() {
-        icon1.setX(icon1.getX());
-        icon1.setY(icon1.getY() - 1000f);
-        icon2.setX(icon2.getX() + 1500f);
-        icon2.setY(icon2.getY() - 1000f);
-        icon3.setX(icon3.getX() + 1500f);
-        icon3.setY(icon3.getY() + 1000f);
-        icon4.setX(icon4.getX());
-        icon4.setY(icon4.getY() + 1750f);
-        icon5.setX(icon5.getX() - 1500f);
-        icon5.setY(icon5.getY() + 1000f);
-        icon6.setX(icon6.getX() - 1500f);
-        icon6.setY(icon6.getY() - 1000f);
+        icon1.setX(icon1.getX()); icon1.setY(icon1.getY() - 1000f);
+        icon2.setX(icon2.getX() + 1500f); icon2.setY(icon2.getY() - 1000f);
+        icon3.setX(icon3.getX() + 1500f); icon3.setY(icon3.getY() + 1000f);
+        icon4.setX(icon4.getX()); icon4.setY(icon4.getY() + 1750f);
+        icon5.setX(icon5.getX() - 1500f); icon5.setY(icon5.getY() + 1000f);
     }
     private void reselectInnerIcons() {
-        icon1.setX(icon1.getX());
-        icon1.setY(icon1.getY() + 1000f);
-        icon2.setX(icon2.getX() - 1500f);
-        icon2.setY(icon2.getY() + 1000f);
-        icon3.setX(icon3.getX() - 1500f);
-        icon3.setY(icon3.getY() - 1000f);
-        icon4.setX(icon4.getX());
-        icon4.setY(icon4.getY() - 1750f);
-        icon5.setX(icon5.getX() + 1500f);
-        icon5.setY(icon5.getY() - 1000f);
-        icon6.setX(icon6.getX() + 1500f);
-        icon6.setY(icon6.getY() + 1000f);
+        icon1.setX(icon1.getX()); icon1.setY(icon1.getY() + 1000f);
+        icon2.setX(icon2.getX() - 1500f); icon2.setY(icon2.getY() + 1000f);
+        icon3.setX(icon3.getX() - 1500f); icon3.setY(icon3.getY() - 1000f);
+        icon4.setX(icon4.getX()); icon4.setY(icon4.getY() - 1750f);
+        icon5.setX(icon5.getX() + 1500f); icon5.setY(icon5.getY() - 1000f);
     }
-    
+
 }
