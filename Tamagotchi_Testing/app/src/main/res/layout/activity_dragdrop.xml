@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id = "@+id/background"
+    android:background="#FFF2FA"
+    android:orientation = "vertical">
+
+    <ImageView
+        android:id="@+id/subOption"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintVertical_bias="0.306"
+        app:srcCompat="@drawable/icon1_heading" />
+
+    <ImageView
+        android:id="@+id/page1Heading"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/icon1_heading" />
+
+    <ImageView
+        android:id="@+id/page2Heading"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/icon2_heading" />
+
+    <ImageView
+        android:id="@+id/page3Heading"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/icon3_heading" />
+
+    <ImageView
+        android:id="@+id/page4Heading"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/icon4_heading" />
+
+    <ImageView
+        android:id="@+id/page5Heading"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/icon5_heading" />
+
+    <ImageView
+        android:id="@+id/bunny"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574"
+        app:srcCompat="@drawable/bunny" />
+
+    <ImageView
+        android:id="@+id/arrowLeft"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/arrow_left" />
+
+    <ImageView
+        android:id="@+id/arrowRight"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintLeft_toLeftOf="@id/bunny"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/arrow_right" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.617">
+
+        <ImageView
+            android:id="@+id/iconSlot1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.557"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/pink_square" />
+
+        <ImageView
+            android:id="@+id/iconSlot2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/pink_square" />
+
+        <ImageView
+            android:id="@+id/iconSlot3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/pink_square" />
+
+        <ImageView
+            android:id="@+id/iconSlot4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintLeft_toLeftOf="@id/bunny"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/pink_square" />
+
+        <ImageView
+            android:id="@+id/iconSlot5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@id/bunny"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/pink_square" />
+
+        <ImageView
+            android:id="@+id/iconSlot6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/bunny"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.858"
+            app:srcCompat="@drawable/pink_square" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.617">
+
+        <ImageView
+            android:id="@+id/page1Icon1"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page1Icon2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page1Icon3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page1Icon4"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon4" />
+
+        <ImageView
+            android:id="@+id/page1Icon5"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon5" />
+
+        <ImageView
+            android:id="@+id/page1Icon6"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.614">
+
+        <ImageView
+            android:id="@+id/page2Icon1"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page2Icon2"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_marginRight="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page2Icon3"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/bunny"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page2Icon4"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page2Icon5"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+        <ImageView
+            android:id="@+id/page2Icon6"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_marginRight="9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.614">
+
+        <ImageView
+            android:id="@+id/page3Icon1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page3Icon2"
+            android:layout_width="40dp"
+            android:layout_marginLeft="17dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page3Icon3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="17dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page3Icon4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_marginLeft="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page3Icon5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_marginLeft="17dp"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+
+        <ImageView
+            android:id="@+id/page3Icon6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon2" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.614">
+
+        <ImageView
+            android:id="@+id/page4Icon1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:visibility="invisible"
+            android:translationX="-10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page4Icon2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:visibility="invisible"
+            android:translationX="-9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page4Icon3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:translationX="-8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page4Icon4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:visibility="invisible"
+            android:translationX="-7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page4Icon5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:translationX="-4dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+        <ImageView
+            android:id="@+id/page4Icon6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:translationX="-3dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon3" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/bunny"
+        app:layout_constraintTop_toTopOf="@id/bunny"
+        app:layout_constraintVertical_bias="0.614">
+
+        <ImageView
+            android:id="@+id/page5Icon1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:translationX="-80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon4" />
+
+        <ImageView
+            android:id="@+id/page5Icon2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:translationX="-65dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon4" />
+
+        <ImageView
+            android:id="@+id/page5Icon3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:translationX="-50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon4" />
+
+        <ImageView
+            android:id="@+id/page5Icon4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:translationX="-35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/bunny"
+            app:layout_constraintTop_toTopOf="@id/bunny"
+            app:srcCompat="@drawable/page1icon4" />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
