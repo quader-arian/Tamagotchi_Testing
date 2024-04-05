@@ -63,30 +63,35 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon1_heading));
+                showSubMenu1();
             }
         });
         mainItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon2_heading));
+                showSubMenu2();
             }
         });
         mainItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon3_heading));
+                showSubMenu3();
             }
         });
         mainItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon4_heading));
+                showSubMenu4();
             }
         });
         mainItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon5_heading));
+                showSubMenu5();
             }
         });
     }
