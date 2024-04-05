@@ -2,6 +2,7 @@ package com.example.waveletmenu;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -58,11 +59,14 @@ public class Activity2 extends AppCompatActivity {
         subItem5 = findViewById(R.id.subitem5);
         subItem6 = findViewById(R.id.subitem6);
 
+        heading = findViewById(R.id.heading);
+
         //set listeners for the main items
         mainItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon1_heading));
+                showSubMenu();
                 showSubMenu1();
             }
         });
@@ -70,6 +74,7 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon2_heading));
+                showSubMenu();
                 showSubMenu2();
             }
         });
@@ -77,6 +82,7 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon3_heading));
+                showSubMenu();
                 showSubMenu3();
             }
         });
@@ -84,6 +90,7 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon4_heading));
+                showSubMenu();
                 showSubMenu4();
             }
         });
@@ -91,6 +98,7 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 heading.setForeground(getDrawable(R.drawable.icon5_heading));
+                showSubMenu();
                 showSubMenu5();
             }
         });
@@ -103,12 +111,9 @@ public class Activity2 extends AppCompatActivity {
         subItem4.setForeground(getDrawable(R.drawable.icon1_4));
         subItem5.setForeground(getDrawable(R.drawable.icon1_5));
         subItem6.setForeground(getDrawable(R.drawable.icon1_6));
-        subItem1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_1heading));
-            }
+        subItem1.setOnClickListener(view -> {
+            touchStartTime = System.currentTimeMillis();
+            heading.setForeground(getDrawable(R.drawable.icon1_1heading));
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,6 +211,7 @@ public class Activity2 extends AppCompatActivity {
         subItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 touchStartTime = System.currentTimeMillis();
                 heading.setForeground(getDrawable(R.drawable.icon3_1heading));
             }
