@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:layout_gravity="top">
+    <ImageButton
+        android:layout_gravity="center"
+        android:foreground="@drawable/icon1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heading" />
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/submenu">
         <ImageButton
             android:layout_gravity="center"
             android:foreground="@drawable/icon1_2"

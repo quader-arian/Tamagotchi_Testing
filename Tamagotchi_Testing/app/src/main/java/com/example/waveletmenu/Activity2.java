@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,15 +31,18 @@ public class Activity2 extends AppCompatActivity {
     boolean outerIsExpanded = false;
 
     boolean iconSelected = false;
+    protected int menuItem, submenuItem;
 
     // Keeps track of the start time the user touches the screen
     private long touchStartTime = 0;
-
+    LinearLayout submenu;
+    ImageView heading;
     // Indicator of which icon is selected
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.linear);
+        submenu = findViewById(R.id.submenu);
         //initalize main menu items
         mainItem1 = findViewById(R.id.mainitem1);
         mainItem2 = findViewById(R.id.mainitem2);
@@ -57,17 +62,59 @@ public class Activity2 extends AppCompatActivity {
 
     protected void showSubMenu1(){
         subItem1.setForeground(getDrawable(R.drawable.icon1_1));
-//        subItem1.setOnTouchListener(new View.OnTouchListener(){
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                return false;
-//            }
-//        });
         subItem2.setForeground(getDrawable(R.drawable.icon1_2));
         subItem3.setForeground(getDrawable(R.drawable.icon1_3));
         subItem4.setForeground(getDrawable(R.drawable.icon1_4));
         subItem5.setForeground(getDrawable(R.drawable.icon1_5));
         subItem6.setForeground(getDrawable(R.drawable.icon1_6));
+        subItem1.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_1heading));
+                return false;
+            }
+        });
+        subItem2.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_2heading));
+                return false;
+            }
+        });
+        subItem3.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_3heading));
+                return false;
+            }
+        });
+        subItem4.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_4heading));
+                return false;
+            }
+        });
+        subItem5.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_5heading));
+                return false;
+            }
+        });
+        subItem6.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon1_6heading));
+                return false;
+            }
+        });
     }
     protected void showSubMenu2(){
         subItem1.setForeground(getDrawable(R.drawable.icon2_1));
@@ -76,6 +123,55 @@ public class Activity2 extends AppCompatActivity {
         subItem4.setForeground(getDrawable(R.drawable.icon2_4));
         subItem5.setForeground(getDrawable(R.drawable.icon2_5));
         subItem6.setForeground(getDrawable(R.drawable.icon2_6));
+
+        subItem1.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_1heading));
+                return false;
+            }
+        });
+        subItem2.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_2heading));
+                return false;
+            }
+        });
+        subItem3.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_3heading));
+                return false;
+            }
+        });
+        subItem4.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_4heading));
+                return false;
+            }
+        });
+        subItem5.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_5heading));
+                return false;
+            }
+        });
+        subItem6.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_6heading));
+                return false;
+            }
+        });
     }
     protected void showSubMenu3(){
         subItem1.setForeground(getDrawable(R.drawable.icon3_1));
@@ -84,6 +180,47 @@ public class Activity2 extends AppCompatActivity {
         subItem4.setForeground(getDrawable(R.drawable.icon3_4));
         subItem5.setForeground(getDrawable(R.drawable.icon3_5));
         subItem6.setForeground(null);
+        subItem1.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon3_1heading));
+                return false;
+            }
+        });
+        subItem2.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon3_2heading));
+                return false;
+            }
+        });
+        subItem3.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon3_3heading));
+                return false;
+            }
+        });
+        subItem4.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon3_4heading));
+                return false;
+            }
+        });
+        subItem5.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon3_5heading));
+                return false;
+            }
+        });
+        subItem6.setOnTouchListener(null);
     }
     protected void showSubMenu4(){
         subItem1.setForeground(getDrawable(R.drawable.icon4_1));
@@ -92,6 +229,40 @@ public class Activity2 extends AppCompatActivity {
         subItem4.setForeground(getDrawable(R.drawable.icon4_4));
         subItem5.setForeground(null);
         subItem6.setForeground(null);
+        subItem1.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon4_1heading));
+                return false;
+            }
+        });
+        subItem2.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon4_2heading));
+                return false;
+            }
+        });
+        subItem3.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon4_3heading));
+                return false;
+            }
+        });
+        subItem4.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon4_4heading));
+                return false;
+            }
+        });
+        subItem5.setOnTouchListener(null);
+        subItem6.setOnTouchListener(null);
     }
     protected void showSubMenu5(){
         subItem1.setForeground(getDrawable(R.drawable.icon5_1));
@@ -100,15 +271,64 @@ public class Activity2 extends AppCompatActivity {
         subItem4.setForeground(getDrawable(R.drawable.icon5_4));
         subItem5.setForeground(getDrawable(R.drawable.icon5_5));
         subItem6.setForeground(getDrawable(R.drawable.icon5_6));
+        subItem1.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_1heading));
+                return false;
+            }
+        });
+        subItem2.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_2heading));
+                return false;
+            }
+        });
+        subItem3.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_3heading));
+                return false;
+            }
+        });
+        subItem4.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_4heading));
+                return false;
+            }
+        });
+        subItem5.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_5heading));
+                return false;
+            }
+        });
+        subItem6.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchStartTime = System.currentTimeMillis();
+                heading.setForeground(getDrawable(R.drawable.icon2_6heading));
+                return false;
+            }
+        });
     }
 
+    protected void hideSubMenu(){
+
+    }
     protected void showSubMenu(){
-        subItem1.setEnabled(true);
-        subItem2.setEnabled(true);
-        subItem3.setEnabled(true);
-        subItem4.setEnabled(true);
-        subItem5.setEnabled(true);
-        subItem6.setEnabled(true);
         TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 0f, 3f);
+        raiseSubMenu.setDuration(200);
+        raiseSubMenu.setFillAfter(true);
+
+        submenu.startAnimation(raiseSubMenu);
     }
 }
