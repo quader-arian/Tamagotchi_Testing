@@ -57,10 +57,53 @@ public class Activity2 extends AppCompatActivity {
 
         //innitalize sub menu items
         subItem1 = findViewById(R.id.subitem1);
+        subItem2 = findViewById(R.id.subitem2);
+        subItem3 = findViewById(R.id.subitem3);
+        subItem4 = findViewById(R.id.subitem4);
+        subItem5 = findViewById(R.id.subitem5);
+        subItem6 = findViewById(R.id.subitem6);
+
     }
 
     protected void showSubMenu1(){
-        mainItem2.setForeground(getDrawable(R.drawable.icon1));
+        subItem1.setForeground(getDrawable(R.drawable.icon1_1));
+        subItem2.setForeground(getDrawable(R.drawable.icon1_2));
+        subItem3.setForeground(getDrawable(R.drawable.icon1_3));
+        subItem4.setForeground(getDrawable(R.drawable.icon1_4));
+        subItem5.setForeground(getDrawable(R.drawable.icon1_5));
+        subItem6.setForeground(getDrawable(R.drawable.icon1_6));
+    }
+    protected void showSubMenu2(){
+        subItem1.setForeground(getDrawable(R.drawable.icon2_1));
+        subItem2.setForeground(getDrawable(R.drawable.icon2_2));
+        subItem3.setForeground(getDrawable(R.drawable.icon2_3));
+        subItem4.setForeground(getDrawable(R.drawable.icon2_4));
+        subItem5.setForeground(getDrawable(R.drawable.icon2_5));
+        subItem6.setForeground(getDrawable(R.drawable.icon2_6));
+    }
+    protected void showSubMenu3(){
+        subItem1.setForeground(getDrawable(R.drawable.icon3_1));
+        subItem2.setForeground(getDrawable(R.drawable.icon3_2));
+        subItem3.setForeground(getDrawable(R.drawable.icon3_3));
+        subItem4.setForeground(getDrawable(R.drawable.icon3_4));
+        subItem5.setForeground(getDrawable(R.drawable.icon3_5));
+        subItem6.setForeground(null);
+    }
+    protected void showSubMenu4(){
+        subItem1.setForeground(getDrawable(R.drawable.icon4_1));
+        subItem2.setForeground(getDrawable(R.drawable.icon4_2));
+        subItem3.setForeground(getDrawable(R.drawable.icon4_3));
+        subItem4.setForeground(getDrawable(R.drawable.icon4_4));
+        subItem5.setForeground(null);
+        subItem6.setForeground(null);
+    }
+    protected void showSubMenu5(){
+        subItem1.setForeground(getDrawable(R.drawable.icon5_1));
+        subItem2.setForeground(getDrawable(R.drawable.icon5_2));
+        subItem3.setForeground(getDrawable(R.drawable.icon5_3));
+        subItem4.setForeground(getDrawable(R.drawable.icon5_4));
+        subItem5.setForeground(getDrawable(R.drawable.icon5_5));
+        subItem6.setForeground(getDrawable(R.drawable.icon5_6));
     }
 
     protected void showSubMenu(){
