@@ -257,7 +257,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page1Icon2"
@@ -270,7 +270,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page1Icon3"
@@ -283,7 +283,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page1Icon4"
@@ -296,7 +296,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon4" />
+            app:srcCompat="@drawable/icon1_4" />
 
         <ImageView
             android:id="@+id/page1Icon5"
@@ -310,7 +310,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon5" />
+            app:srcCompat="@drawable/icon1_5" />
 
         <ImageView
             android:id="@+id/page1Icon6"
@@ -323,7 +323,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon6" />
+            app:srcCompat="@drawable/icon1_1" />
 
     </LinearLayout>
 
@@ -350,7 +350,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page2Icon2"
@@ -362,7 +362,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page2Icon3"
@@ -375,7 +375,7 @@
             app:layout_constraintLeft_toLeftOf="@id/bunny"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page2Icon4"
@@ -389,7 +389,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page2Icon5"
@@ -403,7 +403,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
         <ImageView
             android:id="@+id/page2Icon6"
@@ -415,7 +415,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon1" />
+            app:srcCompat="@drawable/icon1_1" />
 
     </LinearLayout>
 
@@ -439,7 +439,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page3Icon2"
@@ -451,7 +451,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page3Icon3"
@@ -463,7 +463,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page3Icon4"
@@ -477,7 +477,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page3Icon5"
@@ -491,7 +491,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
 
         <ImageView
             android:id="@+id/page3Icon6"
@@ -505,7 +505,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon2" />
+            app:srcCompat="@drawable/icon1_2" />
     </LinearLayout>
 
 
@@ -531,7 +531,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page4Icon2"
@@ -544,7 +544,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page4Icon3"
@@ -557,7 +557,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page4Icon4"
@@ -570,7 +570,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page4Icon5"
@@ -583,7 +583,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
         <ImageView
             android:id="@+id/page4Icon6"
@@ -596,7 +596,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/page1icon3" />
+            app:srcCompat="@drawable/icon1_3" />
 
     </LinearLayout>
 
