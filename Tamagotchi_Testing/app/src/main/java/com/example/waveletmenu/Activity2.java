@@ -1,9 +1,10 @@
-package linearmenu;
+package com.example.waveletmenu;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -102,6 +103,12 @@ public class Activity2 extends AppCompatActivity {
     }
 
     protected void showSubMenu(){
-
+        subItem1.setEnabled(true);
+        subItem2.setEnabled(true);
+        subItem3.setEnabled(true);
+        subItem4.setEnabled(true);
+        subItem5.setEnabled(true);
+        subItem6.setEnabled(true);
+        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 0f, 3f);
     }
 }
