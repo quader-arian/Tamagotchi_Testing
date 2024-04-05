@@ -1,86 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:layout_gravity="top">
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_2"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="bottom"
+        android:foreground="@drawable/icon1_1heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/heading" />
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="top"
         android:id="@+id/submenu">
+
         <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_2"
+            android:id="@+id/subitem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem1" />
-        <ImageButton
             android:layout_gravity="center"
-            android:foreground="@drawable/icon1_3"
+            android:foreground="@drawable/icon1_2" />
+
+        <ImageButton
+            android:id="@+id/subitem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem2" />
-        <ImageButton
             android:layout_gravity="center"
-            android:foreground="@drawable/icon1_3"
+            android:foreground="@drawable/icon1_3" />
+
+        <ImageButton
+            android:id="@+id/subitem3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem3" />
-        <ImageButton
             android:layout_gravity="center"
-            android:foreground="@drawable/icon1_3"
+            android:foreground="@drawable/icon1_3" />
+
+        <ImageButton
+            android:id="@+id/subitem4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem4" />
-        <ImageButton
             android:layout_gravity="center"
-            android:foreground="@drawable/icon1_3"
+            android:foreground="@drawable/icon1_3" />
+
+        <ImageButton
+            android:id="@+id/subitem5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem5" />
-        <ImageButton
             android:layout_gravity="center"
-            android:foreground="@drawable/icon1_2"
+            android:foreground="@drawable/icon1_3" />
+
+        <ImageButton
+            android:id="@+id/subitem6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/subitem6" />
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_2" />
     </LinearLayout>
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainitem1" />
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainitem2" />
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainitem3" />
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainitem4" />
-    <ImageButton
-        android:layout_gravity="center"
-        android:foreground="@drawable/icon1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainitem5" />
-</LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="top">
+        <ImageButton
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainitem1" />
+        <ImageButton
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainitem2" />
+        <ImageButton
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainitem3" />
+        <ImageButton
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainitem4" />
+        <ImageButton
+            android:layout_gravity="center"
+            android:foreground="@drawable/icon1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainitem5" />
+    </LinearLayout>
+</RelativeLayout>
