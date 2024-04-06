@@ -89,7 +89,7 @@ public class LinearActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
-        results = new ResultsTextMaker(name, path);
+        results = new ResultsTextMaker("Linear",name, path);
 
 
         setContentView(R.layout.linear);

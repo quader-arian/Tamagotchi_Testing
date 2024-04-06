@@ -14,14 +14,17 @@ public class ResultsTextMaker extends AppCompatActivity {
     private StringBuilder builder;
     private File path;
     private String filename;
+    private String menu;
     private FileOutputStream writer;
-    public ResultsTextMaker(String name, File path) {
+    public ResultsTextMaker(String menu, String name, File path) {
         this.filename = name;
+        this.menu = menu;
         InitalizeFile(name, path);
     }
 
-    public void InitalizeFile(String fileName, File path){
+    public void InitalizeFile( String fileName, File path){
         this.filename += ".txt";
+
         builder = new StringBuilder();
         try {
             writer = new FileOutputStream(new File(path, this.filename));
@@ -30,7 +33,7 @@ public class ResultsTextMaker extends AppCompatActivity {
         }
     }
     public void WriteToFile(String menu, String test, String data, String finishTime){
-        builder.append(String.format("Menu Style: $s Test#: $s ; Time to Complete: $s", menu, test, finishTime));
+        builder.append(String.format("Menu Style: $s Test#: $s ; Time to Complete: $s", this.menu, test, finishTime));
         builder.append("\n");
     }
     public void PublishFile(Context context) throws IOException {

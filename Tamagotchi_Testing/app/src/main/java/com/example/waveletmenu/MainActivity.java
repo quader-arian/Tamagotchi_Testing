@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity{
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
-        results = new ResultsTextMaker(name, path);
+        results = new ResultsTextMaker("Wavelet", name, path);
 
         nextTest();
 
