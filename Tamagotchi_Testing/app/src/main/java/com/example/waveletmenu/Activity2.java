@@ -37,7 +37,7 @@ public class Activity2 extends AppCompatActivity {
     // Keeps track of the start time the user touches the screen
     private long touchStartTime = 0;
     LinearLayout submenu;
-    ImageView heading;
+    ImageView heading, subheading;
     // Indicator of which icon is selected
 
     protected void onCreate(Bundle savedInstanceState){
@@ -60,6 +60,7 @@ public class Activity2 extends AppCompatActivity {
         subItem6 = findViewById(R.id.subitem6);
 
         heading = findViewById(R.id.heading);
+        subheading = findViewById(R.id.subheading);
 
         hideSubMenu();
         //set listeners for the main items
@@ -114,34 +115,34 @@ public class Activity2 extends AppCompatActivity {
         subItem6.setForeground(getDrawable(R.drawable.icon1_6));
         subItem1.setOnClickListener(view -> {
             touchStartTime = System.currentTimeMillis();
-            heading.setForeground(getDrawable(R.drawable.icon1_1heading));
+            subheading.setForeground(getDrawable(R.drawable.icon1_1heading));
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_2heading));
+                subheading.setForeground(getDrawable(R.drawable.icon1_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_3heading));
+                subheading.setForeground(getDrawable(R.drawable.icon1_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_4heading));
+                subheading.setForeground(getDrawable(R.drawable.icon1_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_5heading));
+                subheading.setForeground(getDrawable(R.drawable.icon1_5heading));
             }
         });
 
@@ -149,7 +150,7 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon1_6heading));
+                subheading.setForeground(getDrawable(R.drawable.icon1_6heading));
             }
         });
     }
@@ -164,42 +165,42 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_1heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_2heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_3heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_4heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_5heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_5heading));
             }
         });
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon2_6heading));
+                subheading.setForeground(getDrawable(R.drawable.icon2_6heading));
             }
         });
     }
@@ -215,35 +216,35 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View view) {
 
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon3_1heading));
+                subheading.setForeground(getDrawable(R.drawable.icon3_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon3_2heading));
+                subheading.setForeground(getDrawable(R.drawable.icon3_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon3_3heading));
+                subheading.setForeground(getDrawable(R.drawable.icon3_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon3_4heading));
+                subheading.setForeground(getDrawable(R.drawable.icon3_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon3_5heading));
+                subheading.setForeground(getDrawable(R.drawable.icon3_5heading));
             }
         });
         subItem6.setOnClickListener(null);
@@ -260,28 +261,28 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon4_1heading));
+                subheading.setForeground(getDrawable(R.drawable.icon4_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon4_2heading));
+                subheading.setForeground(getDrawable(R.drawable.icon4_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon4_3heading));
+                subheading.setForeground(getDrawable(R.drawable.icon4_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon4_4heading));
+                subheading.setForeground(getDrawable(R.drawable.icon4_4heading));
             }
         });
         subItem5.setOnClickListener(null);
@@ -300,42 +301,42 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_1heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_2heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_3heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_4heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_5heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_5heading));
             }
         });
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
-                heading.setForeground(getDrawable(R.drawable.icon5_6heading));
+                subheading.setForeground(getDrawable(R.drawable.icon5_6heading));
             }
         });
     }
