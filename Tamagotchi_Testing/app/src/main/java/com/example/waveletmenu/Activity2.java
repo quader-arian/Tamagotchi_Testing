@@ -245,6 +245,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
         subItem6.setOnClickListener(null);
+        subItem6.setVisibility(View.INVISIBLE);
     }
     protected void showSubMenu4(){
         subItem1.setForeground(getDrawable(R.drawable.icon4_1));
@@ -283,6 +284,8 @@ public class Activity2 extends AppCompatActivity {
         });
         subItem5.setOnClickListener(null);
         subItem6.setOnClickListener(null);
+        subItem5.setVisibility(View.INVISIBLE);
+        subItem6.setVisibility(View.INVISIBLE);
     }
     protected void showSubMenu5(){
         subItem1.setForeground(getDrawable(R.drawable.icon5_1));
