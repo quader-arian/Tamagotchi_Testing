@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity{
 
         count--;
         Log.v("HELP", "test: " + count);
-        results.WriteToFile("Wavelet", String.format("%d",count), "1", String.format("%d",touchStartTime));
+        results.WriteToFile("Wavelet", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
+        touchStartTime = System.currentTimeMillis();
         count--;
         if(count < 0){
             try {
@@ -329,7 +330,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -396,7 +397,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -477,7 +478,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -559,7 +560,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -640,7 +641,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -721,7 +722,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -803,7 +804,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -886,7 +887,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -956,7 +957,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1037,7 +1038,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1117,7 +1118,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1197,7 +1198,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1277,7 +1278,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1357,7 +1358,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1439,7 +1440,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1509,7 +1510,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1589,7 +1590,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1669,7 +1670,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1749,7 +1750,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1829,7 +1830,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1911,7 +1912,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -1981,7 +1982,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2061,7 +2062,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2141,7 +2142,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2221,7 +2222,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2303,7 +2304,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2373,7 +2374,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2453,7 +2454,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2533,7 +2534,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2613,7 +2614,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2693,7 +2694,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);
@@ -2773,7 +2774,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Get the time the user presses on the screen
-                    touchStartTime = System.currentTimeMillis();
+
 
                     @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(button);

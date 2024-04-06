@@ -103,7 +103,8 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
 
-        results.WriteToFile("DragNDrop", String.format("%d",count), "1", String.format("%d",touchStartTime));
+        results.WriteToFile("DragNDrop", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
+        touchStartTime = System.currentTimeMillis();
         count--;
         if(count < 0){
             try {
@@ -201,7 +202,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                 if (event.getAction() == DragEvent.ACTION_DROP) {
                     subOption.setVisibility(View.INVISIBLE);
                     if(current == test1*10 + test2){
-                        touchStartTime = System.currentTimeMillis();
                         nextTest();
                     }
                 }
