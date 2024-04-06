@@ -43,48 +43,66 @@
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_1" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_1"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/subitem2"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_2" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_2"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/subitem3"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_3" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_3"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/subitem4"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_4" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_4"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/subitem5"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_5" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_5"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/subitem6"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1_6" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1_6"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,40 +117,55 @@
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon1" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon1"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/mainitem2"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon2" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon2"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/mainitem3"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon3" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon3"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/mainitem4"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon4" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon4"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
 
                 <ImageButton
                     android:id="@+id/mainitem5"
                     android:layout_width="128px"
                     android:layout_height="128px"
                     android:layout_gravity="center"
-                    android:background="#00000000"
-                    android:foreground="@drawable/icon5" />
+                    android:background="@drawable/pink_square"
+                    android:foreground="@drawable/icon5"
+                    android:padding="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
