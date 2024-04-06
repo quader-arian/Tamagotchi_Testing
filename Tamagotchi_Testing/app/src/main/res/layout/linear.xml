@@ -5,19 +5,17 @@
     android:layout_centerInParent="true">
     <ImageView
         android:id="@+id/heading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foreground="@drawable/icon1_1heading" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon1_1heading" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_alignBottom="@id/submenu"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="top"
         android:layout_centerInParent="true"
+        android:gravity="bottom"
         android:id="@+id/submenu">
 
         <ImageButton
@@ -66,10 +64,12 @@
         android:id="@+id/mainmenu"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
+        android:translationY="20dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_alignTop="@id/submenu"
+        android:gravity="bottom"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center">
+        android:layout_gravity="bottom">
         <ImageButton
             android:layout_gravity="center"
             android:foreground="@drawable/icon1"

@@ -61,6 +61,7 @@ public class Activity2 extends AppCompatActivity {
 
         heading = findViewById(R.id.heading);
 
+        hideSubMenu();
         //set listeners for the main items
         mainItem1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +144,7 @@ public class Activity2 extends AppCompatActivity {
                 heading.setForeground(getDrawable(R.drawable.icon1_5heading));
             }
         });
+
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -339,16 +341,23 @@ public class Activity2 extends AppCompatActivity {
     }
 
     protected void hideSubMenu(){
-        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, -3f, 0f);
-        raiseSubMenu.setDuration(200);
-        raiseSubMenu.setFillAfter(true);
-
-        submenu.startAnimation(raiseSubMenu);
+        subItem1.setVisibility(View.INVISIBLE);
+        subItem2.setVisibility(View.INVISIBLE);
+        subItem3.setVisibility(View.INVISIBLE);
+        subItem4.setVisibility(View.INVISIBLE);
+        subItem5.setVisibility(View.INVISIBLE);
+        subItem6.setVisibility(View.INVISIBLE);
     }
     protected void showSubMenu(){
-        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 0f, 3f);
+        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 64f, 0f);
         raiseSubMenu.setDuration(200);
         raiseSubMenu.setFillAfter(true);
+        subItem1.setVisibility(View.VISIBLE);
+        subItem2.setVisibility(View.VISIBLE);
+        subItem3.setVisibility(View.VISIBLE);
+        subItem4.setVisibility(View.VISIBLE);
+        subItem5.setVisibility(View.VISIBLE);
+        subItem6.setVisibility(View.VISIBLE);
 
         submenu.startAnimation(raiseSubMenu);
     }
