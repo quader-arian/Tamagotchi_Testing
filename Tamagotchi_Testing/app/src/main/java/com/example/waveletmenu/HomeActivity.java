@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void click(View v){
-        if(name.getText().toString() == "Tap To Enter Name")
+        if(name.getText().toString() == "")
             name.setText("Subject");
         if(v == b1){
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);

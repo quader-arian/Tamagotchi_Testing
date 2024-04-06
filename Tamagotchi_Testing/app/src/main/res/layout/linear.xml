@@ -17,14 +17,12 @@
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:paddingTop="50dp"
             android:scaleType="center" />
         <ImageView
             android:id="@+id/subheading"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="25dp"
-            android:paddingTop="50dp"
             android:scaleType="center" />
         </LinearLayout>
 
@@ -189,25 +187,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="left"
         android:paddingTop="100dp">
     <ImageView
         android:id="@+id/from"
         android:layout_width="52dp"
         android:layout_height="49dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:foreground="@drawable/icon1" />
+        android:layout_marginStart="32dp" />
         <ImageView
             android:id="@+id/arrow"
             android:layout_width="52dp"
             android:layout_height="49dp"
-            android:layout_marginTop="32dp"
             android:foreground="@drawable/arrow_right" />
     <ImageView
         android:id="@+id/to"
         android:layout_width="52dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:foreground="@drawable/icon1_1" />
+        android:layout_height="49dp" />
     </LinearLayout>
 </FrameLayout>

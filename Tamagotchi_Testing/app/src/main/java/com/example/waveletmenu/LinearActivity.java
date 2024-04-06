@@ -1,7 +1,9 @@
 package com.example.waveletmenu;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
@@ -9,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
+import java.util.Random;
 
 public class LinearActivity extends AppCompatActivity {
     final static int THRESHOLD = 50000;
@@ -35,10 +40,51 @@ public class LinearActivity extends AppCompatActivity {
     private long touchStartTime = 0;
     LinearLayout submenu;
     ImageView heading, subheading;
+    ImageView testImage1, testImage2;
+    int test1;
+    int test2;
+    int current;
+    int count = 11; //exclusive
+
+    public void nextTest(){
+        Random rand = new Random();
+        test1 = rand.nextInt(5)+1;
+        if(test1 == 5){
+            test2 = rand.nextInt(4)+1;
+        }else if(test1 == 4){
+            test2 = rand.nextInt(5)+1;
+        }else{
+            test2 = rand.nextInt(6)+1;
+        }
+
+
+        String iconCode1 = "icon"+test1;
+        String iconCode2 = "icon"+test1+"_"+test2;
+
+        if((test1 ==4 && test2==5)|| test1 ==3 && test2==6){
+            iconCode2 = iconCode1;
+        }
+
+        Log.v("HELP", iconCode2);
+        int id1 = getResources().getIdentifier(iconCode1, "drawable", getPackageName());
+        int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
+        testImage1.setImageResource(id1);
+        testImage2.setImageResource(id2);
+
+        count--;
+        if(count < 0){
+            startActivity(new Intent(LinearActivity.this, HomeActivity.class));
+        }
+    }
     // Indicator of which icon is selected
     @SuppressLint("UseCompatLoadingForDrawables")
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        String name = getIntent().getStringExtra("Name");
+        File path = getApplicationContext().getFilesDir();
+        results = new ResultsTextMaker(name, path);
+
+
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
         //initalize main menu items
@@ -59,6 +105,10 @@ public class LinearActivity extends AppCompatActivity {
         heading = findViewById(R.id.heading);
         subheading = findViewById(R.id.subheading);
 
+        testImage1 = findViewById(R.id.from);
+        testImage2 = findViewById(R.id.to);
+        current = 0;
+        nextTest();
         hideSubMenu();
         //set listeners for the main items
         mainItem1.setOnClickListener(new View.OnClickListener() {
@@ -113,12 +163,14 @@ public class LinearActivity extends AppCompatActivity {
         subItem6.setForeground(getDrawable(R.drawable.icon1_6));
         subItem1.setOnClickListener(view -> {
             touchStartTime = System.currentTimeMillis();
+            nextTest();
             subheading.setForeground(getDrawable(R.drawable.icon1_1heading));
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon1_2heading));
             }
         });
@@ -126,6 +178,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon1_3heading));
             }
         });
@@ -133,6 +186,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon1_4heading));
             }
         });
@@ -140,6 +194,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon1_5heading));
             }
         });
@@ -148,6 +203,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon1_6heading));
             }
         });
@@ -164,6 +220,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_1heading));
             }
         });
@@ -171,6 +228,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_2heading));
             }
         });
@@ -178,6 +236,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_3heading));
             }
         });
@@ -185,6 +244,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_4heading));
             }
         });
@@ -192,6 +252,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_5heading));
             }
         });
@@ -199,6 +260,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon2_6heading));
             }
         });
@@ -216,6 +278,7 @@ public class LinearActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon3_1heading));
             }
         });
@@ -223,6 +286,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon3_2heading));
             }
         });
@@ -230,6 +294,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon3_3heading));
             }
         });
@@ -237,6 +302,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon3_4heading));
             }
         });
@@ -244,6 +310,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon3_5heading));
             }
         });
@@ -262,6 +329,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon4_1heading));
             }
         });
@@ -269,6 +337,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon4_2heading));
             }
         });
@@ -276,6 +345,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon4_3heading));
             }
         });
@@ -283,6 +353,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon4_4heading));
             }
         });
@@ -303,6 +374,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_1heading));
             }
         });
@@ -310,6 +382,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_2heading));
             }
         });
@@ -317,6 +390,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_3heading));
             }
         });
@@ -324,6 +398,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_4heading));
             }
         });
@@ -331,6 +406,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_5heading));
             }
         });
@@ -338,6 +414,7 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 touchStartTime = System.currentTimeMillis();
+                nextTest();
                 subheading.setForeground(getDrawable(R.drawable.icon5_6heading));
             }
         });
