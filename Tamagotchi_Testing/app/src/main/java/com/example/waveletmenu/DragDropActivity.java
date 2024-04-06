@@ -3,9 +3,11 @@ package com.example.waveletmenu;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -15,6 +17,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Random;
 
 public class DragDropActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -33,6 +37,11 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     ImageView page4Icon1, page4Icon2, page4Icon3, page4Icon4, page4Icon5;
     ImageView page5Icon1, page5Icon2, page5Icon3, page5Icon4;
     ImageView subOption;
+    ImageView testImage1, testImage2;
+    int test1;
+    int test2;
+    int current;
+    int count = 11; //exclusive
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -63,6 +72,37 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                 break;
         }
         return super.onTouchEvent(event);
+    }
+
+    public void nextTest(){
+        Random rand = new Random();
+        test1 = rand.nextInt(5)+1;
+        if(test1 == 5){
+            test2 = rand.nextInt(4)+1;
+        }else if(test1 == 4){
+            test2 = rand.nextInt(5)+1;
+        }else{
+            test2 = rand.nextInt(6)+1;
+        }
+
+
+        String iconCode1 = "icon"+test1;
+        String iconCode2 = "icon"+test1+"_"+test2;
+
+        if((test1 ==4 && test2==5)|| test1 ==3 && test2==6){
+            iconCode2 = iconCode1;
+        }
+
+        Log.v("HELP", iconCode2);
+        int id1 = getResources().getIdentifier(iconCode1, "drawable", getPackageName());
+        int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
+        testImage1.setImageResource(id1);
+        testImage2.setImageResource(id2);
+
+        count--;
+        if(count < 0){
+            startActivity(new Intent(DragDropActivity.this, HomeActivity.class));
+        }
     }
 
     @Override
@@ -110,6 +150,11 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         heading4 = findViewById(R.id.page4Heading);
         heading5 = findViewById(R.id.page5Heading);
 
+        testImage1 = findViewById(R.id.from);
+        testImage2 = findViewById(R.id.to);
+        current = 0;
+        nextTest();
+
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         arrowLeft = findViewById(R.id.arrowLeft);
@@ -132,19 +177,23 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             public boolean onDrag(View v, DragEvent event) {
                 if (event.getAction() == DragEvent.ACTION_DRAG_ENTERED) {
                     ping.start();
+                    //in = true;
                 }
                 if (event.getAction() == DragEvent.ACTION_DRAG_EXITED) {
                     subOption.setVisibility(View.INVISIBLE);
+                    //in = false;
                 }
                 if (event.getAction() == DragEvent.ACTION_DROP) {
                     subOption.setVisibility(View.INVISIBLE);
+                    if(current == test1*10 + test2){
+                        nextTest();
+                    }
                 }
                 return true;
             }
         });
 
         arrowLeft.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 prevPage();
@@ -169,8 +218,8 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                     View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(page1Icon1);
                     page1Icon1.startDrag(data, shadowBuilder, page1Icon1, 0);
                     getSubOption(page1Icon1);
+                    Log.v("HELP", "ok so here?");
                 }
-
                 return true;
             }
         });
@@ -183,7 +232,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                 ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
                 View.DragShadowBuilder myShadow = new View.DragShadowBuilder(page1Icon1);
                 v.startDrag(dragData, null, null, 0);
-
+                Log.v("HELP", "finish??");
                 return false;
             }
         });
@@ -197,7 +246,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                     page1Icon2.startDrag(data, shadowBuilder, page1Icon2, 0);
                     getSubOption(page1Icon2);
                 }
-
                 return true;
             }
         });
@@ -251,7 +299,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                     page1Icon4.startDrag(data, shadowBuilder, page1Icon4, 0);
                     getSubOption(page1Icon4);
                 }
-
                 return true;
             }
         });
@@ -899,88 +946,88 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     }
 
     private void getSubOption(View v) {
-        if(v.getId() == R.id.page1Icon1) {
+        if (v.getId() == R.id.page1Icon1) {
             subOption.setImageResource(R.drawable.icon1_1);
-        }
-        else if(v.getId() == R.id.page1Icon2) {
+            current = 11;
+        } else if (v.getId() == R.id.page1Icon2) {
             subOption.setImageResource(R.drawable.icon1_2);
-        }
-        else if(v.getId() == R.id.page1Icon3) {
+            current = 12;
+        } else if (v.getId() == R.id.page1Icon3) {
             subOption.setImageResource(R.drawable.icon1_3);
-        }
-        else if(v.getId() == R.id.page1Icon4) {
+            current = 13;
+        } else if (v.getId() == R.id.page1Icon4) {
             subOption.setImageResource(R.drawable.icon1_4);
-        }
-        else if(v.getId() == R.id.page1Icon5) {
+            current = 14;
+        } else if (v.getId() == R.id.page1Icon5) {
             subOption.setImageResource(R.drawable.icon1_5);
-        }
-        else if(v.getId() == R.id.page1Icon6) {
+            current = 15;
+        } else if (v.getId() == R.id.page1Icon6) {
             subOption.setImageResource(R.drawable.icon1_6);
-        }
-        else if(v.getId() == R.id.page2Icon1) {
+            current = 16;
+        } else if (v.getId() == R.id.page2Icon1) {
             subOption.setImageResource(R.drawable.icon2_1);
-        }
-        else if(v.getId() == R.id.page2Icon2) {
+            current = 21;
+        } else if (v.getId() == R.id.page2Icon2) {
             subOption.setImageResource(R.drawable.icon2_2);
-        }
-        else if(v.getId() == R.id.page2Icon3) {
+            current = 22;
+        } else if (v.getId() == R.id.page2Icon3) {
             subOption.setImageResource(R.drawable.icon2_3);
-        }
-        else if(v.getId() == R.id.page2Icon4) {
+            current = 23;
+        } else if (v.getId() == R.id.page2Icon4) {
             subOption.setImageResource(R.drawable.icon2_4);
-        }
-        else if(v.getId() == R.id.page2Icon5) {
+            current = 24;
+        } else if (v.getId() == R.id.page2Icon5) {
             subOption.setImageResource(R.drawable.icon2_5);
-        }
-        else if(v.getId() == R.id.page2Icon6) {
+            current = 25;
+        } else if (v.getId() == R.id.page2Icon6) {
             subOption.setImageResource(R.drawable.icon2_6);
-        }
-        else if(v.getId() == R.id.page3Icon1) {
+            current = 26;
+        } else if (v.getId() == R.id.page3Icon1) {
             subOption.setImageResource(R.drawable.icon3_1);
-        }
-        else if(v.getId() == R.id.page3Icon2) {
+            current = 31;
+        } else if (v.getId() == R.id.page3Icon2) {
             subOption.setImageResource(R.drawable.icon3_2);
-        }
-        else if(v.getId() == R.id.page3Icon3) {
+            current = 32;
+        } else if (v.getId() == R.id.page3Icon3) {
             subOption.setImageResource(R.drawable.icon3_3);
-        }
-        else if(v.getId() == R.id.page3Icon4) {
+            current = 33;
+        } else if (v.getId() == R.id.page3Icon4) {
             subOption.setImageResource(R.drawable.icon3_4);
-        }
-        else if(v.getId() == R.id.page3Icon5) {
+            current = 34;
+        } else if (v.getId() == R.id.page3Icon5) {
             subOption.setImageResource(R.drawable.icon3_5);
-        }
-        else if(v.getId() == R.id.page3Icon6) {
+            current = 35;
+        } else if (v.getId() == R.id.page3Icon6) {
             subOption.setImageResource(R.drawable.icon3);
-        }
-        else if(v.getId() == R.id.page4Icon1) {
+            current = 36;
+        } else if (v.getId() == R.id.page4Icon1) {
             subOption.setImageResource(R.drawable.icon4_1);
-        }
-        else if(v.getId() == R.id.page4Icon2) {
+            current = 41;
+        } else if (v.getId() == R.id.page4Icon2) {
             subOption.setImageResource(R.drawable.icon4_2);
-        }
-        else if(v.getId() == R.id.page4Icon3) {
+            current = 42;
+        } else if (v.getId() == R.id.page4Icon3) {
             subOption.setImageResource(R.drawable.icon4_3);
-        }
-        else if(v.getId() == R.id.page4Icon4) {
+            current = 43;
+        } else if (v.getId() == R.id.page4Icon4) {
             subOption.setImageResource(R.drawable.icon4_4);
-        }
-        else if(v.getId() == R.id.page4Icon5) {
+            current = 44;
+        } else if (v.getId() == R.id.page4Icon5) {
             subOption.setImageResource(R.drawable.icon4);
-        }
-        else if(v.getId() == R.id.page5Icon1) {
+            current = 45;
+        } else if (v.getId() == R.id.page5Icon1) {
             subOption.setImageResource(R.drawable.icon5_1);
-        }
-        else if(v.getId() == R.id.page5Icon2) {
+            current = 51;
+        } else if (v.getId() == R.id.page5Icon2) {
             subOption.setImageResource(R.drawable.icon5_2);
-        }
-        else if(v.getId() == R.id.page5Icon3) {
+            current = 52;
+        } else if (v.getId() == R.id.page5Icon3) {
             subOption.setImageResource(R.drawable.icon5_3);
-        }
-        else if(v.getId() == R.id.page5Icon4) {
+            current = 53;
+        } else if (v.getId() == R.id.page5Icon4) {
             subOption.setImageResource(R.drawable.icon5_4);
+            current = 54;
         }
-
 
         subOption.setVisibility(View.VISIBLE);
 
