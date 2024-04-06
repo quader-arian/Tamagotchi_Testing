@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class LinearActivity extends AppCompatActivity {
@@ -49,9 +50,9 @@ public class LinearActivity extends AppCompatActivity {
     public void nextTest(){
         Random rand = new Random();
         test1 = rand.nextInt(5)+1;
-        if(test1 == 5){
+        if(test1 == 4){
             test2 = rand.nextInt(4)+1;
-        }else if(test1 == 4){
+        }else if(test1 == 3){
             test2 = rand.nextInt(5)+1;
         }else{
             test2 = rand.nextInt(6)+1;
@@ -70,9 +71,14 @@ public class LinearActivity extends AppCompatActivity {
         int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
-
+        results.WriteToFile("Linear", String.format("%d",count), "1", String.format("%d",touchStartTime));
         count--;
         if(count < 0){
+            try {
+                results.PublishFile(getApplicationContext());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             startActivity(new Intent(LinearActivity.this, HomeActivity.class));
         }
     }
@@ -82,6 +88,7 @@ public class LinearActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
+        String pa = path.getPath();
         results = new ResultsTextMaker(name, path);
 
 
