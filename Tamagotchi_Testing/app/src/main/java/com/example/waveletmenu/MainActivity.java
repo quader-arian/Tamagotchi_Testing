@@ -68,6 +68,17 @@ public class MainActivity extends AppCompatActivity{
             icon4_1Selected, icon4_2Selected, icon4_3Selected, icon4_4Selected,
             icon5_1Selected, icon5_2Selected, icon5_3Selected, icon5_4Selected, icon5_5Selected, icon5_6Selected;
 
+    private View lastSelectedIcon = null;
+
+    // Update the last selected icon when an icon is selected
+    private void updateLastSelectedIcon(View icon) {
+        lastSelectedIcon = icon;
+    }
+
+    // Method to retrieve the last selected icon
+    private View getLastSelectedIcon() {
+        return lastSelectedIcon;
+    }
     public void nextTest(){
         Random rand = new Random();
         test1 = rand.nextInt(5)+1;
@@ -88,8 +99,8 @@ public class MainActivity extends AppCompatActivity{
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
 
-        test1 = 1;
-        test2 = 1;
+//        test1 = 1;
+//        test2 = 1;
 
         count--;
         Log.v("HELP", "test: " + count);
@@ -398,6 +409,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_1);
+                        updateLastSelectedIcon(icon1_1);
                         if(iconSelected && !icon1_1Selected) {
                             deselect();
                             hideHeadings();
@@ -412,9 +424,13 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_1) {
+                            Log.d("ButtonClickListener", "icon1_1 last");
                             deselect();
                             expandOuter(false,0);
+                            if(11 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -475,6 +491,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_2);
+                        updateLastSelectedIcon(icon1_2);
                         if(iconSelected && !icon1_2Selected) {
                             deselect();
                             hideHeadings();
@@ -489,9 +506,13 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_2) {
+                            Log.d("ButtonClickListener", "icon1_2 last");
                             deselect();
                             expandOuter(false,0);
+                            if(12 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -552,6 +573,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_3);
+                        updateLastSelectedIcon(icon1_3);
                         if(iconSelected && !icon1_3Selected) {
                             deselect();
                             hideHeadings();
@@ -566,9 +588,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_3) {
                             deselect();
                             expandOuter(false,0);
+                            if(13 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -629,6 +654,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_4);
+                        updateLastSelectedIcon(icon1_4);
                         if(iconSelected && !icon1_4Selected) {
                             deselect();
                             hideHeadings();
@@ -643,9 +669,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_4) {
                             deselect();
                             expandOuter(false,0);
+                            if(14 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -706,6 +735,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_5);
+                        updateLastSelectedIcon(icon1_5);
                         if(iconSelected && !icon1_5Selected) {
                             deselect();
                             hideHeadings();
@@ -720,9 +750,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_5) {
                             deselect();
                             expandOuter(false,0);
+                            if(15 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -784,6 +817,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon1);
                         showSubHeadings(icon1_6);
+                        updateLastSelectedIcon(icon1_6);
                         if(iconSelected && !icon1_6Selected) {
                             deselect();
                             hideHeadings();
@@ -798,9 +832,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon1_6) {
                             deselect();
                             expandOuter(false,0);
+                            if(16 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -933,6 +970,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_1);
+                        updateLastSelectedIcon(icon2_1);
                         if(iconSelected && !icon2_1Selected) {
                             deselect();
                             hideHeadings();
@@ -947,9 +985,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_1) {
                             deselect();
                             expandOuter(false,0);
+                            if(21 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1010,6 +1051,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_2);
+                        updateLastSelectedIcon(icon2_2);
                         if(iconSelected && !icon2_2Selected) {
                             deselect();
                             hideHeadings();
@@ -1024,9 +1066,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_2) {
                             deselect();
                             expandOuter(false,0);
+                            if(22 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1086,6 +1131,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_3);
+                        updateLastSelectedIcon(icon2_3);
                         if(iconSelected && !icon2_3Selected) {
                             deselect();
                             hideHeadings();
@@ -1100,9 +1146,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_3) {
                             deselect();
                             expandOuter(false,0);
+                            if(23 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1162,6 +1211,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_4);
+                        updateLastSelectedIcon(icon2_4);
                         if(iconSelected && !icon2_4Selected) {
                             deselect();
                             hideHeadings();
@@ -1176,9 +1226,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_4) {
                             deselect();
                             expandOuter(false,0);
+                            if(24 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1238,6 +1291,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_5);
+                        updateLastSelectedIcon(icon2_5);
                         if(iconSelected && !icon2_5Selected) {
                             deselect();
                             hideHeadings();
@@ -1252,9 +1306,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_5) {
                             deselect();
                             expandOuter(false,0);
+                            if(25 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1314,6 +1371,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon2);
                         showSubHeadings(icon2_6);
+                        updateLastSelectedIcon(icon2_6);
                         if(iconSelected && !icon2_6Selected) {
                             deselect();
                             hideHeadings();
@@ -1328,9 +1386,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon2_6) {
                             deselect();
                             expandOuter(false,0);
+                            if(26 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1462,6 +1523,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon3);
                         showSubHeadings(icon3_1);
+                        updateLastSelectedIcon(icon3_1);
                         if(iconSelected && !icon3_1Selected) {
                             deselect();
                             hideHeadings();
@@ -1476,9 +1538,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon3_1) {
                             deselect();
                             expandOuter(false,0);
+                            if(31 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1538,6 +1603,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon3);
                         showSubHeadings(icon3_2);
+                        updateLastSelectedIcon(icon3_2);
                         if(iconSelected && !icon3_2Selected) {
                             deselect();
                             hideHeadings();
@@ -1552,9 +1618,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon3_2) {
                             deselect();
                             expandOuter(false,0);
+                            if(32 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1614,6 +1683,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon3);
                         showSubHeadings(icon3_3);
+                        updateLastSelectedIcon(icon3_3);
                         if(iconSelected && !icon3_3Selected) {
                             deselect();
                             hideHeadings();
@@ -1628,9 +1698,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon3_3) {
                             deselect();
                             expandOuter(false,0);
+                            if(33 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1690,6 +1763,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon3);
                         showSubHeadings(icon3_4);
+                        updateLastSelectedIcon(icon3_4);
                         if(iconSelected && !icon3_4Selected) {
                             deselect();
                             hideHeadings();
@@ -1704,9 +1778,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon3_4) {
                             deselect();
                             expandOuter(false,0);
+                            if(34 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1766,6 +1843,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon3);
                         showSubHeadings(icon3_5);
+                        updateLastSelectedIcon(icon3_5);
                         if(iconSelected && !icon3_5Selected) {
                             deselect();
                             hideHeadings();
@@ -1780,9 +1858,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon3_5) {
                             deselect();
                             expandOuter(false,0);
+                            if(35 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1914,6 +1995,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon4);
                         showSubHeadings(icon4_1);
+                        updateLastSelectedIcon(icon4_1);
                         if(iconSelected && !icon4_1Selected) {
                             deselect();
                             hideHeadings();
@@ -1928,9 +2010,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon4_1) {
                             deselect();
                             expandOuter(false,0);
+                            if(41 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -1990,6 +2075,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon4);
                         showSubHeadings(icon4_2);
+                        updateLastSelectedIcon(icon4_2);
                         if(iconSelected && !icon4_2Selected) {
                             deselect();
                             hideHeadings();
@@ -2004,9 +2090,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon4_2) {
                             deselect();
                             expandOuter(false,0);
+                            if(42 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2066,6 +2155,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon4);
                         showSubHeadings(icon4_3);
+                        updateLastSelectedIcon(icon4_3);
                         if(iconSelected && !icon4_3Selected) {
                             deselect();
                             hideHeadings();
@@ -2080,9 +2170,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon4_3) {
                             deselect();
                             expandOuter(false,0);
+                            if(43 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2142,6 +2235,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon4);
                         showSubHeadings(icon4_4);
+                        updateLastSelectedIcon(icon4_4);
                         if(iconSelected && !icon4_4Selected) {
                             deselect();
                             hideHeadings();
@@ -2156,9 +2250,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon4_4) {
                             deselect();
                             expandOuter(false,0);
+                            if(44 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2290,6 +2387,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_1);
+                        updateLastSelectedIcon(icon5_1);
                         if(iconSelected && !icon5_1Selected) {
                             deselect();
                             hideHeadings();
@@ -2304,9 +2402,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_1) {
                             deselect();
                             expandOuter(false,0);
+                            if(51 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2366,6 +2467,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_2);
+                        updateLastSelectedIcon(icon5_2);
                         if(iconSelected && !icon5_2Selected) {
                             deselect();
                             hideHeadings();
@@ -2380,9 +2482,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_2) {
                             deselect();
                             expandOuter(false,0);
+                            if(52 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2442,6 +2547,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_3);
+                        updateLastSelectedIcon(icon5_3);
                         if(iconSelected && !icon5_3Selected) {
                             deselect();
                             hideHeadings();
@@ -2456,9 +2562,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_3) {
                             deselect();
                             expandOuter(false,0);
+                            if(53  == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2518,6 +2627,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_4);
+                        updateLastSelectedIcon(icon5_4);
                         if(iconSelected && !icon5_4Selected) {
                             deselect();
                             hideHeadings();
@@ -2532,9 +2642,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_4) {
                             deselect();
                             expandOuter(false,0);
+                            if(54 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2594,6 +2707,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_5);
+                        updateLastSelectedIcon(icon5_5);
                         if(iconSelected && !icon5_5Selected) {
                             deselect();
                             hideHeadings();
@@ -2608,9 +2722,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_5) {
                             deselect();
                             expandOuter(false,0);
+                            if(55 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -2670,6 +2787,7 @@ public class MainActivity extends AppCompatActivity{
                     case DragEvent.ACTION_DRAG_ENTERED:
                         showHeadings(icon5);
                         showSubHeadings(icon5_6);
+                        updateLastSelectedIcon(icon5_6);
                         if(iconSelected && !icon5_6Selected) {
                             deselect();
                             hideHeadings();
@@ -2684,9 +2802,12 @@ public class MainActivity extends AppCompatActivity{
                         hideSubHeadings();
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
-                        if(!iconSelected) {
+                        if(!iconSelected && getLastSelectedIcon() == icon5_6) {
                             deselect();
                             expandOuter(false,0);
+                            if(56 == test1*10 + test2){
+                                nextTest();
+                            }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
                                 hideHeadings();
@@ -3018,6 +3139,7 @@ public class MainActivity extends AppCompatActivity{
         icon3_1Selected = false;icon3_2Selected = false;icon3_3Selected = false;icon3_4Selected = false;icon3_5Selected = false;
         icon4_1Selected = false;icon4_2Selected = false;icon4_3Selected = false;icon4_4Selected = false;
         icon5_1Selected = false;icon5_2Selected = false;icon5_3Selected = false;icon5_4Selected = false;icon5_5Selected = false;icon5_6Selected = false;
+
     }
 
     public void showHeadings(ImageView icon) {
