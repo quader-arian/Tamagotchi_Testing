@@ -185,4 +185,29 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="100dp">
+    <ImageView
+        android:id="@+id/from"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:foreground="@drawable/icon1" />
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="52dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="32dp"
+            android:foreground="@drawable/arrow_right" />
+    <ImageView
+        android:id="@+id/to"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:foreground="@drawable/icon1_1" />
+    </LinearLayout>
 </FrameLayout>

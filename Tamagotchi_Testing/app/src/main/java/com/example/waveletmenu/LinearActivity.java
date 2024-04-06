@@ -1,23 +1,19 @@
 package com.example.waveletmenu;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.waveletmenu.R;
-
-public class Activity2 extends AppCompatActivity {
+public class LinearActivity extends AppCompatActivity {
     final static int THRESHOLD = 50000;
+
+    ResultsTextMaker results;
 
     // Six icons are placed evenly around the outer menu
     // All the others are placed in the inner menu

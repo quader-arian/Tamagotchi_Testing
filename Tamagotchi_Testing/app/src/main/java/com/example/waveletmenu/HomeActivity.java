@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         }else if(v == b2){
             startActivity(new Intent(HomeActivity.this, DragDropActivity.class));
         }else if(v == b3){
-            startActivity(new Intent(HomeActivity.this, Activity2.class));
+            startActivity(new Intent(HomeActivity.this, LinearActivity.class));
         }
     }
 }
