@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id = "@+id/background"
@@ -323,7 +324,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/icon1_1" />
+            app:srcCompat="@drawable/icon1_6" />
 
     </LinearLayout>
 
@@ -583,7 +584,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/icon4_4" />
+            app:srcCompat="@drawable/icon4" />
 
         <ImageView
             android:id="@+id/page4Icon6"
@@ -596,7 +597,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/bunny"
             app:layout_constraintTop_toTopOf="@id/bunny"
-            app:srcCompat="@drawable/icon4_4" />
+            app:srcCompat="@drawable/icon4" />
 
     </LinearLayout>
 
@@ -669,6 +670,33 @@
             app:srcCompat="@drawable/icon5_4" />
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/from"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon1" />
+
+    <ImageView
+        android:id="@+id/to"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon1_1" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/from"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_right" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

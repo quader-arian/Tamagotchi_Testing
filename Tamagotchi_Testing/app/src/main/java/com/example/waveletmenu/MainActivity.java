@@ -3,7 +3,9 @@ package com.example.waveletmenu;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
@@ -17,6 +19,8 @@ import android.widget.Toast;
 import android.view.ViewConfiguration;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity{
     /* ----------------------------------------------
@@ -32,7 +36,8 @@ public class MainActivity extends AppCompatActivity{
             icon2_1, icon2_2, icon2_3, icon2_4, icon2_5, icon2_6,
             icon3_1, icon3_2, icon3_3, icon3_4, icon3_5,
             icon4_1, icon4_2, icon4_3, icon4_4,
-            icon5_1, icon5_2, icon5_3, icon5_4, icon5_5, icon5_6;
+            icon5_1, icon5_2, icon5_3, icon5_4, icon5_5, icon5_6,
+            testImage1, testImage2;
 
     // The central button of the wavelet menu
     ImageButton button;
@@ -50,6 +55,11 @@ public class MainActivity extends AppCompatActivity{
     // Keeps track of the start time the user touches the screen
     private long touchStartTime = 0;
 
+    int test1; //keep track of tests
+    int test2;
+    int current;
+    int count = 11; //max tests (exclusive)
+
     // Indicator of which icon is selected
     boolean icon1Selected, icon2Selected, icon3Selected, icon4Selected, icon5Selected,
             icon1_1Selected, icon1_2Selected, icon1_3Selected, icon1_4Selected, icon1_5Selected, icon1_6Selected,
@@ -57,6 +67,36 @@ public class MainActivity extends AppCompatActivity{
             icon3_1Selected, icon3_2Selected, icon3_3Selected, icon3_4Selected, icon3_5Selected,
             icon4_1Selected, icon4_2Selected, icon4_3Selected, icon4_4Selected,
             icon5_1Selected, icon5_2Selected, icon5_3Selected, icon5_4Selected, icon5_5Selected, icon5_6Selected;
+
+    public void nextTest(){
+        Random rand = new Random();
+        test1 = rand.nextInt(5)+1;
+        if(test1 == 3){
+            test2 = rand.nextInt(5)+1;
+        }else if(test1 == 4){
+            test2 = rand.nextInt(4)+1;
+        }else{
+            test2 = rand.nextInt(6)+1;
+        }
+
+        String iconCode1 = "icon"+test1;
+        String iconCode2 = "icon"+test1+"_"+test2;
+
+        Log.v("HELP", iconCode2);
+        int id1 = getResources().getIdentifier(iconCode1, "drawable", getPackageName());
+        int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
+        testImage1.setImageResource(id1);
+        testImage2.setImageResource(id2);
+
+        test1 = 1;
+        test2 = 1;
+
+        count--;
+        Log.v("HELP", "test: " + count);
+        if(count < 0){
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        }
+    }
 
     /* ----------------------------------------------
      * onCreate
@@ -68,6 +108,9 @@ public class MainActivity extends AppCompatActivity{
 
         // Reference for selected icon image
         pink_circle = getResources().getDrawable(R.drawable.pink_circle);
+
+        // Sound to play on complete
+        final MediaPlayer ping = MediaPlayer.create(this, R.raw.click);
 
         // Initialize the icons
         icon1 = findViewById(R.id.icon1);
@@ -145,6 +188,11 @@ public class MainActivity extends AppCompatActivity{
         icon5_4Selected = false;
         icon5_5Selected = false;
         icon5_6Selected = false;
+
+        // Initialize testing
+        testImage1 = findViewById(R.id.from);
+        testImage2 = findViewById(R.id.to);
+        nextTest();
 
         // Initialize the menus
         outerMenu = findViewById(R.id.outerCircle);
@@ -371,6 +419,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(11 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon1_1Selected = false;
                         }
@@ -444,6 +496,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(12 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon1_2Selected = false;
                         }
@@ -517,6 +573,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(13 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon1_3Selected = false;
                         }
@@ -590,6 +650,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(14 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon1_4Selected = false;
                         }
@@ -663,6 +727,11 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(15 == test1*10 + test2){
+                                    nextTest();
+                                }
+
                             }
                             icon1_5Selected = false;
                         }
@@ -736,6 +805,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(16 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon1_6Selected = false;
                         }
@@ -881,6 +954,10 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                //check if they selected the right one
+                                if(21 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_1Selected = false;
                         }
@@ -954,6 +1031,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(22 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_2Selected = false;
                         }
@@ -1027,6 +1107,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(23 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_3Selected = false;
                         }
@@ -1100,6 +1183,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(24 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_4Selected = false;
                         }
@@ -1173,6 +1259,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(25 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_5Selected = false;
                         }
@@ -1246,6 +1335,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(26 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon2_6Selected = false;
                         }
@@ -1391,6 +1483,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(31 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon3_1Selected = false;
                         }
@@ -1464,6 +1559,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(32 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon3_2Selected = false;
                         }
@@ -1537,6 +1635,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(33 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon3_3Selected = false;
                         }
@@ -1610,6 +1711,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(34 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon3_4Selected = false;
                         }
@@ -1683,6 +1787,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(35 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon3_5Selected = false;
                         }
@@ -1828,6 +1935,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(41 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon4_1Selected = false;
                         }
@@ -1901,6 +2011,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(42 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon4_2Selected = false;
                         }
@@ -1974,6 +2087,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(43 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon4_3Selected = false;
                         }
@@ -2047,6 +2163,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(44 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon4_4Selected = false;
                         }
@@ -2192,6 +2311,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(51 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_1Selected = false;
                         }
@@ -2265,6 +2387,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(52 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_2Selected = false;
                         }
@@ -2338,6 +2463,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(53  == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_3Selected = false;
                         }
@@ -2411,6 +2539,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(54 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_4Selected = false;
                         }
@@ -2484,6 +2615,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(55 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_5Selected = false;
                         }
@@ -2557,6 +2691,9 @@ public class MainActivity extends AppCompatActivity{
                                 expandInner(false,0);
                                 hideHeadings();
                                 hideSubHeadings();
+                                if(56 == test1*10 + test2){
+                                    nextTest();
+                                }
                             }
                             icon5_6Selected = false;
                         }
