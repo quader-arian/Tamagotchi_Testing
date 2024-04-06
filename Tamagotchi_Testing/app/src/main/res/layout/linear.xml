@@ -1,104 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerInParent="true">
-    <ImageView
-        android:id="@+id/heading"
+    android:layout_height="match_parent">
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/icon1_1heading" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:gravity="bottom"
-        android:id="@+id/submenu">
-
-        <ImageButton
-            android:id="@+id/subitem1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_1" />
-
-        <ImageButton
-            android:id="@+id/subitem2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_2" />
-
-        <ImageButton
-            android:id="@+id/subitem3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_3" />
-
-        <ImageButton
-            android:id="@+id/subitem4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_4" />
-
-        <ImageButton
-            android:id="@+id/subitem5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_5" />
-
-        <ImageButton
-            android:id="@+id/subitem6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1_6" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/mainmenu"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:translationY="20dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/submenu"
-        android:gravity="bottom"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="bottom">
-        <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon1"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mainitem1" />
-        <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mainitem2" />
-        <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mainitem3" />
-        <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mainitem4" />
-        <ImageButton
-            android:layout_gravity="center"
-            android:foreground="@drawable/icon5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mainitem5" />
-    </LinearLayout>
-</RelativeLayout>
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/submenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/subitem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_1" />
+
+                <ImageButton
+                    android:id="@+id/subitem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_2" />
+
+                <ImageButton
+                    android:id="@+id/subitem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_3" />
+
+                <ImageButton
+                    android:id="@+id/subitem4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_4" />
+
+                <ImageButton
+                    android:id="@+id/subitem5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_5" />
+
+                <ImageButton
+                    android:id="@+id/subitem6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1_6" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mainmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/submenu"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/mainitem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon1" />
+
+                <ImageButton
+                    android:id="@+id/mainitem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon2" />
+
+                <ImageButton
+                    android:id="@+id/mainitem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon3" />
+
+                <ImageButton
+                    android:id="@+id/mainitem4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon4" />
+
+                <ImageButton
+                    android:id="@+id/mainitem5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:foreground="@drawable/icon5" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
