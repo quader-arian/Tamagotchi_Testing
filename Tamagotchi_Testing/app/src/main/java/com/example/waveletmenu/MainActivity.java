@@ -20,6 +20,8 @@ import android.view.ViewConfiguration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity{
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity{
     int test2;
     int current;
     int count = 11; //max tests (exclusive)
+    ResultsTextMaker results;
 
     // Indicator of which icon is selected
     boolean icon1Selected, icon2Selected, icon3Selected, icon4Selected, icon5Selected,
@@ -104,7 +107,14 @@ public class MainActivity extends AppCompatActivity{
 
         count--;
         Log.v("HELP", "test: " + count);
+        results.WriteToFile("Wavelet", String.format("%d",count), "1", String.format("%d",touchStartTime));
+        count--;
         if(count < 0){
+            try {
+                results.PublishFile(getApplicationContext());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             startActivity(new Intent(MainActivity.this, HomeActivity.class));
         }
     }
@@ -203,6 +213,12 @@ public class MainActivity extends AppCompatActivity{
         // Initialize testing
         testImage1 = findViewById(R.id.from);
         testImage2 = findViewById(R.id.to);
+
+        String name = getIntent().getStringExtra("Name");
+        File path = getApplicationContext().getFilesDir();
+        String pa = path.getPath();
+        results = new ResultsTextMaker(name, path);
+
         nextTest();
 
         // Initialize the menus

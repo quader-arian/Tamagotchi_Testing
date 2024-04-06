@@ -18,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class DragDropActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
@@ -38,10 +40,12 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     ImageView page5Icon1, page5Icon2, page5Icon3, page5Icon4;
     ImageView subOption;
     ImageView testImage1, testImage2;
+    private long touchStartTime = 0;
     int test1;
     int test2;
     int current;
     int count = 11; //exclusive
+    ResultsTextMaker results;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -99,8 +103,14 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
 
+        results.WriteToFile("DragNDrop", String.format("%d",count), "1", String.format("%d",touchStartTime));
         count--;
         if(count < 0){
+            try {
+                results.PublishFile(getApplicationContext());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             startActivity(new Intent(DragDropActivity.this, HomeActivity.class));
         }
     }
@@ -109,6 +119,11 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dragdrop);
+
+        String name = getIntent().getStringExtra("Name");
+        File path = getApplicationContext().getFilesDir();
+        String pa = path.getPath();
+        results = new ResultsTextMaker(name, path);
 
         bunny = findViewById(R.id.bunny);
 
@@ -186,6 +201,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                 if (event.getAction() == DragEvent.ACTION_DROP) {
                     subOption.setVisibility(View.INVISIBLE);
                     if(current == test1*10 + test2){
+                        touchStartTime = System.currentTimeMillis();
                         nextTest();
                     }
                 }

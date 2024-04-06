@@ -187,8 +187,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="left"
-        android:paddingTop="100dp">
+        android:gravity="left">
     <ImageView
         android:id="@+id/from"
         android:layout_width="52dp"
