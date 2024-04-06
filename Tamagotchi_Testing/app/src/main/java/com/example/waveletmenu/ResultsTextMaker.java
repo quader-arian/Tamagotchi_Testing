@@ -23,7 +23,7 @@ public class ResultsTextMaker extends AppCompatActivity {
     }
 
     public void InitalizeFile( String fileName, File path){
-        this.filename += ".txt";
+        this.filename += this.menu + ".txt";
 
         builder = new StringBuilder();
         try {
