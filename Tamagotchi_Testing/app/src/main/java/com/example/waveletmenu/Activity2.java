@@ -1,5 +1,6 @@
 package com.example.waveletmenu;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class Activity2 extends AppCompatActivity {
     LinearLayout submenu;
     ImageView heading, subheading;
     // Indicator of which icon is selected
-
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.linear);
@@ -106,6 +107,7 @@ public class Activity2 extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void showSubMenu1(){
         subItem1.setForeground(getDrawable(R.drawable.icon1_1));
         subItem2.setForeground(getDrawable(R.drawable.icon1_2));
@@ -154,6 +156,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void showSubMenu2(){
         subItem1.setForeground(getDrawable(R.drawable.icon2_1));
         subItem2.setForeground(getDrawable(R.drawable.icon2_2));
@@ -204,6 +207,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void showSubMenu3(){
         subItem1.setForeground(getDrawable(R.drawable.icon3_1));
         subItem2.setForeground(getDrawable(R.drawable.icon3_2));
@@ -250,6 +254,7 @@ public class Activity2 extends AppCompatActivity {
         subItem6.setOnClickListener(null);
         subItem6.setVisibility(View.INVISIBLE);
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void showSubMenu4(){
         subItem1.setForeground(getDrawable(R.drawable.icon4_1));
         subItem2.setForeground(getDrawable(R.drawable.icon4_2));
@@ -290,6 +295,7 @@ public class Activity2 extends AppCompatActivity {
         subItem5.setVisibility(View.INVISIBLE);
         subItem6.setVisibility(View.INVISIBLE);
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     protected void showSubMenu5(){
         subItem1.setForeground(getDrawable(R.drawable.icon5_1));
         subItem2.setForeground(getDrawable(R.drawable.icon5_2));
@@ -350,7 +356,7 @@ public class Activity2 extends AppCompatActivity {
         subItem6.setVisibility(View.INVISIBLE);
     }
     protected void showSubMenu(){
-        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 64f, 0f);
+        TranslateAnimation raiseSubMenu = new TranslateAnimation(0f, 0f, 50f, 0f);
         raiseSubMenu.setDuration(200);
         raiseSubMenu.setFillAfter(true);
         subItem1.setVisibility(View.VISIBLE);
