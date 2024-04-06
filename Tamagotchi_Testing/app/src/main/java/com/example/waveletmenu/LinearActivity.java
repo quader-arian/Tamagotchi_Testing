@@ -169,39 +169,55 @@ public class LinearActivity extends AppCompatActivity {
         subItem5.setForeground(getDrawable(R.drawable.icon1_5));
         subItem6.setForeground(getDrawable(R.drawable.icon1_6));
         subItem1.setOnClickListener(view -> {
-            touchStartTime = System.currentTimeMillis();
-            nextTest();
+            current = 11;
+
+            if(current == test1*10 + test2){
+                touchStartTime = System.currentTimeMillis();
+                nextTest();
+            }
             subheading.setForeground(getDrawable(R.drawable.icon1_1heading));
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 12;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon1_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 13;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon1_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 14;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon1_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 15;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon1_5heading));
             }
         });
@@ -209,8 +225,11 @@ public class LinearActivity extends AppCompatActivity {
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 16;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon1_6heading));
             }
         });
@@ -226,48 +245,66 @@ public class LinearActivity extends AppCompatActivity {
         subItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 21;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 22;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 23;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 24;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 25;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_5heading));
             }
         });
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 26;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon2_6heading));
             }
         });
@@ -283,41 +320,55 @@ public class LinearActivity extends AppCompatActivity {
         subItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 31;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon3_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 32;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon3_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 33;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon3_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 34;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon3_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 35;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon3_5heading));
             }
         });
@@ -335,32 +386,44 @@ public class LinearActivity extends AppCompatActivity {
         subItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 41;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon4_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 42;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon4_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 43;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon4_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 44;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon4_4heading));
             }
         });
@@ -380,48 +443,66 @@ public class LinearActivity extends AppCompatActivity {
         subItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 51;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_1heading));
             }
         });
         subItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 52;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_2heading));
             }
         });
         subItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 53;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_3heading));
             }
         });
         subItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 54;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_4heading));
             }
         });
         subItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 55;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_5heading));
             }
         });
         subItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                touchStartTime = System.currentTimeMillis();
-                nextTest();
+                current = 56;
+                if(current == test1*10 + test2){
+                    touchStartTime = System.currentTimeMillis();
+                    nextTest();
+                }
                 subheading.setForeground(getDrawable(R.drawable.icon5_6heading));
             }
         });
