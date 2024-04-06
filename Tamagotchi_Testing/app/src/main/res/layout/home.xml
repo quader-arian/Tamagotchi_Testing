@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id = "@+id/background"
+    android:background="#FFF2FA"
+    android:orientation = "vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/wavelet_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/wavelet_heading" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/drag_drop_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/drag_drop_heading" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/linear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/linear_heading" />
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

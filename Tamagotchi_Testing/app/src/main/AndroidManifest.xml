@@ -13,13 +13,24 @@
         android:theme="@style/Theme.WaveletMenu"
         tools:targetApi="31">
         <activity
-            android:name=".Activity2"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="WaveletActivity">
+        </activity>
+        <activity
+            android:name=".DragDropActivity"
+            android:label="DragDropActivity">
+        </activity>
+        <activity
+            android:name=".Activity2"
+            android:label="LinearActivity">
         </activity>
     </application>
 
