@@ -250,6 +250,7 @@ public class MainActivity extends AppCompatActivity{
                         startX = event.getX();
                         startY = event.getY();
                         isDragging = false;
+                        expandOuter(true, 0);
                         break;
 
                     case MotionEvent.ACTION_MOVE:

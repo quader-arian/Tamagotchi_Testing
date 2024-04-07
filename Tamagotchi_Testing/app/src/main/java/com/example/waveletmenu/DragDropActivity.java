@@ -35,8 +35,8 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             heading1, heading2, heading3, heading4, heading5;
 
     ImageView page2Icon1, page2Icon2, page2Icon3, page2Icon4, page2Icon5, page2Icon6;
-    ImageView page3Icon1, page3Icon2, page3Icon3, page3Icon4, page3Icon5, page3Icon6;
-    ImageView page4Icon1, page4Icon2, page4Icon3, page4Icon4, page4Icon5;
+    ImageView page3Icon1, page3Icon2, page3Icon3, page3Icon4, page3Icon5;
+    ImageView page4Icon1, page4Icon2, page4Icon3, page4Icon4, page5Icon5, page5Icon6;
     ImageView page5Icon1, page5Icon2, page5Icon3, page5Icon4;
     ImageView subOption, mainOption;
     ImageView testImage1, testImage2;
@@ -147,18 +147,18 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         page3Icon3 = findViewById(R.id.page3Icon3);
         page3Icon4 = findViewById(R.id.page3Icon4);
         page3Icon5 = findViewById(R.id.page3Icon5);
-        page3Icon6 = findViewById(R.id.page3Icon6);
 
         page4Icon1 = findViewById(R.id.page4Icon1);
         page4Icon2 = findViewById(R.id.page4Icon2);
         page4Icon3 = findViewById(R.id.page4Icon3);
         page4Icon4 = findViewById(R.id.page4Icon4);
-        page4Icon5 = findViewById(R.id.page4Icon5);
 
         page5Icon1 = findViewById(R.id.page5Icon1);
         page5Icon2 = findViewById(R.id.page5Icon2);
         page5Icon3 = findViewById(R.id.page5Icon3);
         page5Icon4 = findViewById(R.id.page5Icon4);
+        page5Icon5 = findViewById(R.id.page5Icon5);
+        page5Icon6 = findViewById(R.id.page5Icon6);
 
         heading1 = findViewById(R.id.page1Heading);
         heading2 = findViewById(R.id.page2Heading);
@@ -689,33 +689,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             }
         });
 
-        page3Icon6.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
-                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(page3Icon6);
-                    page3Icon6.startDrag(data, shadowBuilder, page3Icon6, 0);
-                    getSubOption(page3Icon6);
-                }
-
-                return true;
-            }
-        });
-        page3Icon6.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
-                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
-
-                ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
-                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(page3Icon6);
-                v.startDrag(dragData, null, null, 0);
-
-                return false;
-            }
-        });
-
         // --------------------------------------------------------------------------------
 
         page4Icon1.setOnTouchListener(new View.OnTouchListener() {
@@ -825,32 +798,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             }
         });
 
-        page4Icon5.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
-                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(page4Icon5);
-                    page4Icon5.startDrag(data, shadowBuilder, page4Icon5, 0);
-                    getSubOption(page4Icon5);
-                }
 
-                return true;
-            }
-        });
-        page4Icon5.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
-                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
-
-                ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
-                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(page4Icon5);
-                v.startDrag(dragData, null, null, 0);
-
-                return false;
-            }
-        });
 
         // -----------------------------------------------------------------------------------------
 
@@ -961,91 +909,143 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                 return false;
             }
         });
+        page5Icon5.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(page5Icon5);
+                    page5Icon5.startDrag(data, shadowBuilder, page5Icon5, 0);
+                    getSubOption(page5Icon5);
+                }
+
+                return true;
+            }
+        });
+        page5Icon5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(page5Icon5);
+                v.startDrag(dragData, null, null, 0);
+
+                return false;
+            }
+        });
+        page5Icon6.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    @SuppressLint("ClickableViewAccessibility") ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(page5Icon6);
+                    page5Icon6.startDrag(data, shadowBuilder, page5Icon6, 0);
+                    getSubOption(page5Icon6);
+                }
+
+                return true;
+            }
+        });
+        page5Icon6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(page5Icon6);
+                v.startDrag(dragData, null, null, 0);
+
+                return false;
+            }
+        });
     }
 
     private void getSubOption(View v) {
         if (v.getId() == R.id.page1Icon1) {
-            subOption.setImageResource(R.drawable.icon1_1);
+            subOption.setImageResource(R.drawable.icon1_1heading);
             current = 11;
         } else if (v.getId() == R.id.page1Icon2) {
-            subOption.setImageResource(R.drawable.icon1_2);
+            subOption.setImageResource(R.drawable.icon1_2heading);
             current = 12;
         } else if (v.getId() == R.id.page1Icon3) {
-            subOption.setImageResource(R.drawable.icon1_3);
+            subOption.setImageResource(R.drawable.icon1_3heading);
             current = 13;
         } else if (v.getId() == R.id.page1Icon4) {
-            subOption.setImageResource(R.drawable.icon1_4);
+            subOption.setImageResource(R.drawable.icon1_4heading);
             current = 14;
         } else if (v.getId() == R.id.page1Icon5) {
-            subOption.setImageResource(R.drawable.icon1_5);
+            subOption.setImageResource(R.drawable.icon1_5heading);
             current = 15;
         } else if (v.getId() == R.id.page1Icon6) {
-            subOption.setImageResource(R.drawable.icon1_6);
+            subOption.setImageResource(R.drawable.icon1_6heading);
             current = 16;
         } else if (v.getId() == R.id.page2Icon1) {
-            subOption.setImageResource(R.drawable.icon2_1);
+            subOption.setImageResource(R.drawable.icon2_1heading);
             current = 21;
         } else if (v.getId() == R.id.page2Icon2) {
-            subOption.setImageResource(R.drawable.icon2_2);
+            subOption.setImageResource(R.drawable.icon2_2heading);
             current = 22;
         } else if (v.getId() == R.id.page2Icon3) {
-            subOption.setImageResource(R.drawable.icon2_3);
+            subOption.setImageResource(R.drawable.icon2_3heading);
             current = 23;
         } else if (v.getId() == R.id.page2Icon4) {
-            subOption.setImageResource(R.drawable.icon2_4);
+            subOption.setImageResource(R.drawable.icon2_4heading);
             current = 24;
         } else if (v.getId() == R.id.page2Icon5) {
-            subOption.setImageResource(R.drawable.icon2_5);
+            subOption.setImageResource(R.drawable.icon2_5heading);
             current = 25;
         } else if (v.getId() == R.id.page2Icon6) {
-            subOption.setImageResource(R.drawable.icon2_6);
+            subOption.setImageResource(R.drawable.icon2_6heading);
             current = 26;
         } else if (v.getId() == R.id.page3Icon1) {
-            subOption.setImageResource(R.drawable.icon3_1);
+            subOption.setImageResource(R.drawable.icon3_1heading);
             current = 31;
         } else if (v.getId() == R.id.page3Icon2) {
-            subOption.setImageResource(R.drawable.icon3_2);
+            subOption.setImageResource(R.drawable.icon3_2heading);
             current = 32;
         } else if (v.getId() == R.id.page3Icon3) {
-            subOption.setImageResource(R.drawable.icon3_3);
+            subOption.setImageResource(R.drawable.icon3_3heading);
             current = 33;
         } else if (v.getId() == R.id.page3Icon4) {
-            subOption.setImageResource(R.drawable.icon3_4);
+            subOption.setImageResource(R.drawable.icon3_4heading);
             current = 34;
         } else if (v.getId() == R.id.page3Icon5) {
-            subOption.setImageResource(R.drawable.icon3_5);
+            subOption.setImageResource(R.drawable.icon3_5heading);
             current = 35;
-        } else if (v.getId() == R.id.page3Icon6) {
-            subOption.setImageResource(R.drawable.icon3);
-            current = 36;
         } else if (v.getId() == R.id.page4Icon1) {
-            subOption.setImageResource(R.drawable.icon4_1);
+            subOption.setImageResource(R.drawable.icon4_1heading);
             current = 41;
         } else if (v.getId() == R.id.page4Icon2) {
-            subOption.setImageResource(R.drawable.icon4_2);
+            subOption.setImageResource(R.drawable.icon4_2heading);
             current = 42;
         } else if (v.getId() == R.id.page4Icon3) {
-            subOption.setImageResource(R.drawable.icon4_3);
+            subOption.setImageResource(R.drawable.icon4_3heading);
             current = 43;
         } else if (v.getId() == R.id.page4Icon4) {
-            subOption.setImageResource(R.drawable.icon4_4);
+            subOption.setImageResource(R.drawable.icon4_4heading);
             current = 44;
-        } else if (v.getId() == R.id.page4Icon5) {
-            subOption.setImageResource(R.drawable.icon4);
-            current = 45;
         } else if (v.getId() == R.id.page5Icon1) {
-            subOption.setImageResource(R.drawable.icon5_1);
+            subOption.setImageResource(R.drawable.icon5_1heading);
             current = 51;
         } else if (v.getId() == R.id.page5Icon2) {
-            subOption.setImageResource(R.drawable.icon5_2);
+            subOption.setImageResource(R.drawable.icon5_2heading);
             current = 52;
         } else if (v.getId() == R.id.page5Icon3) {
-            subOption.setImageResource(R.drawable.icon5_3);
+            subOption.setImageResource(R.drawable.icon5_3heading);
             current = 53;
         } else if (v.getId() == R.id.page5Icon4) {
-            subOption.setImageResource(R.drawable.icon5_4);
+            subOption.setImageResource(R.drawable.icon5_4heading);
             current = 54;
-        }
+        } else if (v.getId() == R.id.page5Icon5) {
+            subOption.setImageResource(R.drawable.icon5_5heading);
+            current = 55;
+        } else if (v.getId() == R.id.page5Icon6) {
+            subOption.setImageResource(R.drawable.icon5_6heading);
+            current = 56;
+    }
 
         subOption.setVisibility(View.VISIBLE);
 
@@ -1110,6 +1110,8 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page5Icon2.setVisibility(View.INVISIBLE);
             page5Icon3.setVisibility(View.INVISIBLE);
             page5Icon4.setVisibility(View.INVISIBLE);
+            page5Icon5.setVisibility(View.INVISIBLE);
+            page5Icon6.setVisibility(View.INVISIBLE);
 
             page2Icon1.setVisibility(View.INVISIBLE);
             page2Icon2.setVisibility(View.INVISIBLE);
@@ -1136,7 +1138,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page3Icon3.setVisibility(View.INVISIBLE);
             page3Icon4.setVisibility(View.INVISIBLE);
             page3Icon5.setVisibility(View.INVISIBLE);
-            page3Icon6.setVisibility(View.INVISIBLE);
 
             page2Icon1.setVisibility(View.VISIBLE);
             page2Icon2.setVisibility(View.VISIBLE);
@@ -1156,7 +1157,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page3Icon3.setVisibility(View.VISIBLE);
             page3Icon4.setVisibility(View.VISIBLE);
             page3Icon5.setVisibility(View.VISIBLE);
-            page3Icon6.setVisibility(View.VISIBLE);
+
 
             page2Icon1.setVisibility(View.INVISIBLE);
             page2Icon2.setVisibility(View.INVISIBLE);
@@ -1169,7 +1170,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page4Icon2.setVisibility(View.INVISIBLE);
             page4Icon3.setVisibility(View.INVISIBLE);
             page4Icon4.setVisibility(View.INVISIBLE);
-            page4Icon5.setVisibility(View.INVISIBLE);
 
             heading3.setVisibility(View.VISIBLE);
             heading4.setVisibility(View.INVISIBLE);
@@ -1182,19 +1182,20 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page5Icon2.setVisibility(View.INVISIBLE);
             page5Icon3.setVisibility(View.INVISIBLE);
             page5Icon4.setVisibility(View.INVISIBLE);
+            page5Icon5.setVisibility(View.INVISIBLE);
+            page5Icon6.setVisibility(View.INVISIBLE);
 
             page3Icon1.setVisibility(View.INVISIBLE);
             page3Icon2.setVisibility(View.INVISIBLE);
             page3Icon3.setVisibility(View.INVISIBLE);
             page3Icon4.setVisibility(View.INVISIBLE);
             page3Icon5.setVisibility(View.INVISIBLE);
-            page3Icon6.setVisibility(View.INVISIBLE);
 
             page4Icon1.setVisibility(View.VISIBLE);
             page4Icon2.setVisibility(View.VISIBLE);
             page4Icon3.setVisibility(View.VISIBLE);
             page4Icon4.setVisibility(View.VISIBLE);
-            page4Icon5.setVisibility(View.VISIBLE);
+
 
             heading4.setVisibility(View.VISIBLE);
             heading3.setVisibility(View.INVISIBLE);
@@ -1212,12 +1213,14 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             page4Icon2.setVisibility(View.INVISIBLE);
             page4Icon3.setVisibility(View.INVISIBLE);
             page4Icon4.setVisibility(View.INVISIBLE);
-            page4Icon5.setVisibility(View.INVISIBLE);
+
 
             page5Icon1.setVisibility(View.VISIBLE);
             page5Icon2.setVisibility(View.VISIBLE);
             page5Icon3.setVisibility(View.VISIBLE);
             page5Icon4.setVisibility(View.VISIBLE);
+            page5Icon5.setVisibility(View.VISIBLE);
+            page5Icon6.setVisibility(View.VISIBLE);
 
             heading5.setVisibility(View.VISIBLE);
             heading1.setVisibility(View.INVISIBLE);
