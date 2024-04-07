@@ -447,6 +447,7 @@ public class MainActivity extends AppCompatActivity{
                             deselect();
                             expandOuter(false,0);
                             if(11 == test1*10 + test2){
+                                nextTest();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);

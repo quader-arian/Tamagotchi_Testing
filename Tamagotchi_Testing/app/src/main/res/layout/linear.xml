@@ -187,8 +187,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="left">
-    <ImageView
+        android:gravity="right"
+        android:paddingTop="100dp">
+        <ImageView
         android:id="@+id/from"
         android:layout_width="52dp"
         android:layout_height="49dp"
@@ -198,20 +199,18 @@
             android:layout_width="52dp"
             android:layout_height="49dp"
             android:foreground="@drawable/arrow_right" />
-    <ImageView
+        <ImageView
         android:id="@+id/to"
         android:layout_width="52dp"
         android:layout_height="49dp" />
-
-        <TextView
-            android:id="@+id/fps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="TextView"
-            android:textAlignment="viewEnd" />
     </LinearLayout>
-
+    <TextView
+        android:layout_gravity="right"
+        android:id="@+id/fps"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="TextView" />
 
 </FrameLayout>

@@ -38,7 +38,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     ImageView page3Icon1, page3Icon2, page3Icon3, page3Icon4, page3Icon5, page3Icon6;
     ImageView page4Icon1, page4Icon2, page4Icon3, page4Icon4, page4Icon5;
     ImageView page5Icon1, page5Icon2, page5Icon3, page5Icon4;
-    ImageView subOption;
+    ImageView subOption, mainOption;
     ImageView testImage1, testImage2;
     private long touchStartTime = 0;
     int test1;
@@ -177,6 +177,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         arrowRight = findViewById(R.id.arrowRight);
 
         subOption = findViewById(R.id.subOption);
+        mainOption = findViewById(R.id.mainOption);
 
         this.gestureDetector = new GestureDetector(DragDropActivity.this, this);
 

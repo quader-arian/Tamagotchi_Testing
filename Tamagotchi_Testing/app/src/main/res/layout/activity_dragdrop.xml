@@ -9,6 +9,22 @@
     android:orientation = "vertical">
 
     <ImageView
+        android:id="@+id/mainOption"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintVertical_bias="0.23"
+        app:srcCompat="@drawable/icon1_heading" />
+
+    <ImageView
         android:id="@+id/subOption"
         android:layout_width="60dp"
         android:layout_height="50dp"
