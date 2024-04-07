@@ -717,7 +717,7 @@
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon1_heading" />
+        app:srcCompat="@drawable/icon2_heading" />
 
     <ImageView
         android:id="@+id/to"

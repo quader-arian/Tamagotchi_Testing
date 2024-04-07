@@ -90,7 +90,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         }
 
 
-        String iconCode1 = "heading"+test1;
+        String iconCode1 = "icon"+test1+"_"+"heading";
         String iconCode2 = "icon"+test1+"_"+test2;
 
         if((test1 ==4 && test2==5)|| test1 ==3 && test2==6){
