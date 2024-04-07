@@ -32,8 +32,8 @@ public class ResultsTextMaker extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
-    public void WriteToFile(String menu, String test, String data, String finishTime){
-        builder.append(String.format("Menu Style: %s Test#: %s ; Time to Complete: %s", this.menu, test, finishTime));
+    public void WriteToFile(String menu, String test, String finishTime){
+        builder.append(String.format("Menu Style: %s; Test#: %s; Time to Complete: %s", this.menu, test, finishTime));
         builder.append("\n");
     }
     public void PublishFile(Context context) throws IOException {

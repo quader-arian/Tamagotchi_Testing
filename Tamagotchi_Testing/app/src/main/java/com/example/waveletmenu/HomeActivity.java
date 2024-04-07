@@ -1,6 +1,7 @@
 package com.example.waveletmenu;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -28,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private long frameTime;
     private int frame;
+    private MediaPlayer ping;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,12 +41,12 @@ public class HomeActivity extends AppCompatActivity {
         l1 = findViewById(R.id.stats1_button);
         l2 = findViewById(R.id.stats2_button);
         l3 = findViewById(R.id.stats3_button);
-        t2 = findViewById(R.id.fps);
         name = findViewById(R.id.namefield);
+        ping = MediaPlayer.create(this, R.raw.click);
 
-        frameTime = System.nanoTime();
-        frame = 0;
-        updateFPS();
+        //frameTime = System.nanoTime();
+        //frame = 0;
+        //updateFPS();
     }
 
     private void updateFPS() {
@@ -62,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void click(View v){
+        ping.start();
         if(name.getText().toString() == "")
             name.setText("Subject");
         if(v == b1){
@@ -79,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
         }else if(v == l1 || v == l2 || v == l3) {
             File file;
             if(v==l1){
-                file = new File("/data/user/0/com.example.waveletmenu/files", name.getText().toString()+"Wavelet.txt");
+                file = new File("/data/user/0/com.example.waveletmenu/files", name.getText().toString()+"Radial.txt");
             }else if(v==l2){
                 file = new File("/data/user/0/com.example.waveletmenu/files", name.getText().toString()+"DragNDrop.txt");
             }else{

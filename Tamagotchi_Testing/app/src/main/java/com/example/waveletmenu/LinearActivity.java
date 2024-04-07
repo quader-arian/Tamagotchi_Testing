@@ -2,6 +2,7 @@ package com.example.waveletmenu;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,7 @@ public class LinearActivity extends AppCompatActivity {
 
     // Keep track of the visibility of the outer/inner menus
     boolean outerIsExpanded = false;
-
+    MediaPlayer ping;
     boolean iconSelected = false;
     protected int menuItem, submenuItem;
 
@@ -72,8 +73,10 @@ public class LinearActivity extends AppCompatActivity {
         int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
-        results.WriteToFile("Linear", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
-        touchStartTime = System.currentTimeMillis();
+        if((-1) * (count - 10) != 0){
+            results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+        }        touchStartTime = System.currentTimeMillis();
+        ping.start();
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());
@@ -92,7 +95,7 @@ public class LinearActivity extends AppCompatActivity {
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
-
+        results.WriteToFile("Linear", name, "...");
 
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
@@ -113,6 +116,8 @@ public class LinearActivity extends AppCompatActivity {
 
         heading = findViewById(R.id.heading);
         subheading = findViewById(R.id.subheading);
+
+        ping = MediaPlayer.create(this, R.raw.click);
 
         testImage1 = findViewById(R.id.from);
         testImage2 = findViewById(R.id.to);

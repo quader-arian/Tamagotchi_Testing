@@ -737,6 +737,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_right" />
 
+<<<<<<< Updated upstream
 <!--    <TextView-->
 <!--        android:id="@+id/fps"-->
 <!--        android:layout_width="wrap_content"-->
@@ -748,5 +749,7 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
+=======
+>>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>

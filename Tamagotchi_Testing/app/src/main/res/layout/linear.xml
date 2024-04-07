@@ -224,6 +224,7 @@
         android:layout_width="52dp"
         android:layout_height="49dp" />
     </LinearLayout>
+<<<<<<< Updated upstream
 <!--    <TextView-->
 <!--        android:layout_gravity="right"-->
 <!--        android:id="@+id/fps"-->
@@ -232,5 +233,7 @@
 <!--        android:layout_marginTop="32dp"-->
 <!--        android:layout_marginEnd="32dp"-->
 <!--        android:text="TextView" />-->
+=======
+>>>>>>> Stashed changes
 
 </FrameLayout>
