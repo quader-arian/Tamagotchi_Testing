@@ -714,10 +714,10 @@
         android:layout_height="49dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon1" />
+        app:srcCompat="@drawable/icon1_heading" />
 
     <ImageView
         android:id="@+id/to"
