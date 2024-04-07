@@ -66,6 +66,7 @@ public class LinearActivity extends AppCompatActivity {
             iconCode2 = iconCode1;
         }
 
+        count--;
         Log.v("HELP", iconCode2);
         int id1 = getResources().getIdentifier(iconCode1, "drawable", getPackageName());
         int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
@@ -73,7 +74,6 @@ public class LinearActivity extends AppCompatActivity {
         testImage2.setImageResource(id2);
         results.WriteToFile("Linear", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
         touchStartTime = System.currentTimeMillis();
-        count--;
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());
@@ -90,6 +90,7 @@ public class LinearActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
+        Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
 
 

@@ -97,6 +97,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             iconCode2 = iconCode1;
         }
 
+        count--;
         Log.v("HELP", iconCode2);
         int id1 = getResources().getIdentifier(iconCode1, "drawable", getPackageName());
         int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
@@ -105,7 +106,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
 
         results.WriteToFile("DragNDrop", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
         touchStartTime = System.currentTimeMillis();
-        count--;
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());

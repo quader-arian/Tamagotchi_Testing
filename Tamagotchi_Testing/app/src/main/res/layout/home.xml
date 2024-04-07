@@ -19,6 +19,7 @@
 
             <EditText
                 android:id="@+id/namefield"
+                android:layout_weight="0"
                 android:fontFamily="monospace"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -27,6 +28,7 @@
                 tools:text="Tap To Enter Name">
 
             </EditText>
+
         </TableRow>
 
         <TableRow
@@ -38,11 +40,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00FFFFFF"
                 android:contextClickable="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
                 app:srcCompat="@drawable/wavelet_heading" />
         </TableRow>
 
@@ -55,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00FFFFFF"
                 android:contextClickable="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
@@ -73,13 +79,91 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00FFFFFF"
                 android:contextClickable="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
                 app:srcCompat="@drawable/linear_heading" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/stats1_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/stats1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/stats2_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/stats2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/stats3_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:contextClickable="true"
+                android:onClick="click"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scaleType="fitCenter"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/stats3" />
+
+        </TableRow>
+
     </TableLayout>
+
+    <TextView
+        android:id="@+id/fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="TextView"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

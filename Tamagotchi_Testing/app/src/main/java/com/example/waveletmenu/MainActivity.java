@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity{
         Log.v("HELP", "test: " + count);
         results.WriteToFile("Wavelet", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
         touchStartTime = System.currentTimeMillis();
-        count--;
+        //count--;
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());
@@ -218,6 +218,7 @@ public class MainActivity extends AppCompatActivity{
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
+        Log.v("Find Path", pa);
         results = new ResultsTextMaker("Wavelet", name, path);
 
         nextTest();
