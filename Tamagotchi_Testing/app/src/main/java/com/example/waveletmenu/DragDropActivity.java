@@ -81,9 +81,9 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
     public void nextTest(){
         Random rand = new Random();
         test1 = rand.nextInt(5)+1;
-        if(test1 == 5){
-            test2 = rand.nextInt(4)+1;
-        }else if(test1 == 4){
+        if(test1 == 4){
+            test2 = rand.nextInt(3)+1;
+        }else if(test1 == 3){
             test2 = rand.nextInt(5)+1;
         }else{
             test2 = rand.nextInt(6)+1;
