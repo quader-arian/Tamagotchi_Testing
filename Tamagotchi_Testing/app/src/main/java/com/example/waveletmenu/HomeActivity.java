@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         frame++;
         t2.postDelayed(this::updateFPS, 1000);
     }
-    
+
     public void click(View v){
         if(name.getText().toString() == "")
             name.setText("Subject");
