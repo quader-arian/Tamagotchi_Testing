@@ -710,7 +710,7 @@
 
     <ImageView
         android:id="@+id/from"
-        android:layout_width="52dp"
+        android:layout_width="80dp"
         android:layout_height="49dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
