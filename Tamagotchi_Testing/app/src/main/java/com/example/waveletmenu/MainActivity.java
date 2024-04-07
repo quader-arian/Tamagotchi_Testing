@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity{
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Wavelet", name, path);
-
+        touchStartTime = System.currentTimeMillis();
         nextTest();
 
         // Initialize the menus

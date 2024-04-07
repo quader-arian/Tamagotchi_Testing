@@ -169,6 +169,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         testImage1 = findViewById(R.id.from);
         testImage2 = findViewById(R.id.to);
         current = 0;
+        touchStartTime = System.currentTimeMillis();
         nextTest();
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
