@@ -77,7 +77,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         }
         return super.onTouchEvent(event);
     }
-
+//fixed
     public void nextTest(){
         Random rand = new Random();
         test1 = rand.nextInt(5)+1;
