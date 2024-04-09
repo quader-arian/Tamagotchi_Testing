@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
 
     // Keep track of the visibility of the outer/inner menus
     boolean outerIsExpanded = false, innerIsExpanded = false;
-
+    MediaPlayer ping;
     boolean iconSelected = false;
     // An image that represents when an outer menu item is selected
     Drawable pink_circle;
@@ -107,8 +107,11 @@ public class MainActivity extends AppCompatActivity{
 
         count--;
         Log.v("HELP", "test: " + count);
-        results.WriteToFile("Wavelet", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
+        if((-1) * (count - 10) != 0){
+            results.WriteToFile("Radial", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+        }
         touchStartTime = System.currentTimeMillis();
+        ping.start();
         //count--;
         if(count < 0){
             try {
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity{
         pink_circle = getResources().getDrawable(R.drawable.pink_circle);
 
         // Sound to play on complete
-        final MediaPlayer ping = MediaPlayer.create(this, R.raw.click);
+        ping = MediaPlayer.create(this, R.raw.click);
 
         // Initialize the icons
         icon1 = findViewById(R.id.icon1);
@@ -219,7 +222,8 @@ public class MainActivity extends AppCompatActivity{
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
         Log.v("Find Path", pa);
-        results = new ResultsTextMaker("Wavelet", name, path);
+        results = new ResultsTextMaker("Radial", name, path);
+        results.WriteToFile("Radial", name, "...");
         touchStartTime = System.currentTimeMillis();
         nextTest();
 

@@ -2,6 +2,7 @@ package com.example.waveletmenu;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +47,7 @@ public class LinearActivity extends AppCompatActivity {
     int test2;
     int current;
     int count = 11; //exclusive
+    MediaPlayer ping;
 
     public void nextTest(){
         Random rand = new Random();
@@ -72,8 +74,11 @@ public class LinearActivity extends AppCompatActivity {
         int id2 = getResources().getIdentifier(iconCode2, "drawable", getPackageName());
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
-        results.WriteToFile("Linear", String.format("%d",count), "1", String.format("%d",System.currentTimeMillis() - touchStartTime));
+        if((-1) * (count - 10) != 0){
+            results.WriteToFile("Linear", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+        }
         touchStartTime = System.currentTimeMillis();
+        ping.start();
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());
@@ -92,7 +97,8 @@ public class LinearActivity extends AppCompatActivity {
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
-
+        results.WriteToFile("Linear", name, "...");
+        ping = MediaPlayer.create(this, R.raw.click);
 
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
