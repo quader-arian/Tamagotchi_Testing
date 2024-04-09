@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         ping.start();
         if(name.getText().toString() == "")
             name.setText("Subject");
+
         if(v == b1){
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
             intent.putExtra("Name", name.getText().toString());
