@@ -34,7 +34,7 @@ public class LinearActivity extends AppCompatActivity {
 
     // Keep track of the visibility of the outer/inner menus
     boolean outerIsExpanded = false;
-    MediaPlayer ping;
+
     boolean iconSelected = false;
     protected int menuItem, submenuItem;
 
@@ -47,6 +47,7 @@ public class LinearActivity extends AppCompatActivity {
     int test2;
     int current;
     int count = 11; //exclusive
+    MediaPlayer ping;
 
     public void nextTest(){
         Random rand = new Random();
@@ -74,8 +75,9 @@ public class LinearActivity extends AppCompatActivity {
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
-        }        touchStartTime = System.currentTimeMillis();
+            results.WriteToFile("Linear", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+        }
+        touchStartTime = System.currentTimeMillis();
         ping.start();
         if(count < 0){
             try {
@@ -96,6 +98,7 @@ public class LinearActivity extends AppCompatActivity {
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
         results.WriteToFile("Linear", name, "...");
+        ping = MediaPlayer.create(this, R.raw.click);
 
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
@@ -116,8 +119,6 @@ public class LinearActivity extends AppCompatActivity {
 
         heading = findViewById(R.id.heading);
         subheading = findViewById(R.id.subheading);
-
-        ping = MediaPlayer.create(this, R.raw.click);
 
         testImage1 = findViewById(R.id.from);
         testImage2 = findViewById(R.id.to);

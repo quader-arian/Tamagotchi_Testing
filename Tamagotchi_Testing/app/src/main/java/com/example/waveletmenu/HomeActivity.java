@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView t1, t2;
 
     private long frameTime;
-    private int frame;
+
     private MediaPlayer ping;
 
     @Override
@@ -43,30 +43,13 @@ public class HomeActivity extends AppCompatActivity {
         l3 = findViewById(R.id.stats3_button);
         name = findViewById(R.id.namefield);
         ping = MediaPlayer.create(this, R.raw.click);
-
-        //frameTime = System.nanoTime();
-        //frame = 0;
-        //updateFPS();
-    }
-
-    private void updateFPS() {
-        long currentTime = System.nanoTime();
-        long deltaTime = currentTime - frameTime;
-        frameTime = currentTime;
-
-        if (deltaTime > 0) {
-            double fps = 1e9 / deltaTime; // Frames per second (FPS)
-            t2.setText("FPS: " + (int)fps);
-        }
-
-        frame++;
-        t2.postDelayed(this::updateFPS, 1000);
     }
 
     public void click(View v){
         ping.start();
         if(name.getText().toString() == "")
             name.setText("Subject");
+
         if(v == b1){
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
             intent.putExtra("Name", name.getText().toString());

@@ -93,7 +93,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         String iconCode1 = "icon"+test1+"_"+"heading";
         String iconCode2 = "icon"+test1+"_"+test2;
 
-        if((test1 ==4 && test2==5)|| test1 ==3 && test2==6){
+        if((test1 ==4 && test2==5)|| (test1 ==3 && test2==6)){
             iconCode2 = "icon"+test1;
         }
 
@@ -107,7 +107,6 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         if((-1) * (count - 10) != 0){
             results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
-
         touchStartTime = System.currentTimeMillis();
         if(count < 0){
             try {
@@ -128,7 +127,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
         results = new ResultsTextMaker("DragNDrop",name, path);
-        results.WriteToFile("Linear", name, "...");
+        results.WriteToFile("DragNDrop", name, "...");
 
         bunny = findViewById(R.id.bunny);
 

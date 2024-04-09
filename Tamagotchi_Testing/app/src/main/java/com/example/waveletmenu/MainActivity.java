@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
 
     // Keep track of the visibility of the outer/inner menus
     boolean outerIsExpanded = false, innerIsExpanded = false;
-
+    MediaPlayer ping;
     boolean iconSelected = false;
     // An image that represents when an outer menu item is selected
     Drawable pink_circle;
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity{
     int current;
     int count = 11; //max tests (exclusive)
     ResultsTextMaker results;
-    MediaPlayer ping;
 
     // Indicator of which icon is selected
     boolean icon1Selected, icon2Selected, icon3Selected, icon4Selected, icon5Selected,
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity{
         count--;
         Log.v("HELP", "test: " + count);
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+            results.WriteToFile("Radial", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
         touchStartTime = System.currentTimeMillis();
         ping.start();
@@ -224,7 +223,7 @@ public class MainActivity extends AppCompatActivity{
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Radial", name, path);
-        results.WriteToFile("Linear", name, "...");
+        results.WriteToFile("Radial", name, "...");
         touchStartTime = System.currentTimeMillis();
         nextTest();
 
