@@ -47,7 +47,7 @@ public class LinearActivity extends AppCompatActivity {
     int test2;
     int current;
     int count = 11; //exclusive
-    MediaPlayer ping;
+    MediaPlayer ping, pingWrong;
 
     public void nextTest(){
         Random rand = new Random();
@@ -100,6 +100,7 @@ public class LinearActivity extends AppCompatActivity {
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
         ping = MediaPlayer.create(this, R.raw.click);
+        pingWrong = MediaPlayer.create(this, R.raw.wrong);
 
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
@@ -183,6 +184,8 @@ public class LinearActivity extends AppCompatActivity {
 
             if(current == test1*10 + test2){
                 nextTest();
+            }else{
+                pingWrong.start();
             }
             subheading.setForeground(getDrawable(R.drawable.icon1_1heading));
         });
@@ -192,6 +195,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 12;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon1_2heading));
             }
@@ -202,6 +207,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 13;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon1_3heading));
             }
@@ -212,6 +219,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 14;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon1_4heading));
             }
@@ -222,6 +231,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 15;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon1_5heading));
             }
@@ -233,6 +244,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 16;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon1_6heading));
             }
@@ -252,6 +265,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 21;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_1heading));
             }
@@ -262,6 +277,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 22;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_2heading));
             }
@@ -272,6 +289,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 23;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_3heading));
             }
@@ -282,6 +301,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 24;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_4heading));
             }
@@ -292,6 +313,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 25;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_5heading));
             }
@@ -302,6 +325,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 26;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon2_6heading));
             }
@@ -321,6 +346,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 31;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon3_1heading));
             }
@@ -331,6 +358,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 32;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon3_2heading));
             }
@@ -341,6 +370,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 33;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon3_3heading));
             }
@@ -351,6 +382,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 34;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon3_4heading));
             }
@@ -361,6 +394,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 35;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon3_5heading));
             }
@@ -382,6 +417,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 41;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon4_1heading));
             }
@@ -392,6 +429,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 42;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon4_2heading));
             }
@@ -402,6 +441,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 43;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon4_3heading));
             }
@@ -412,6 +453,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 44;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon4_4heading));
             }
@@ -435,6 +478,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 51;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_1heading));
             }
@@ -445,6 +490,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 52;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_2heading));
             }
@@ -455,6 +502,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 53;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_3heading));
             }
@@ -465,6 +514,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 54;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_4heading));
             }
@@ -475,6 +526,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 55;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_5heading));
             }
@@ -485,6 +538,8 @@ public class LinearActivity extends AppCompatActivity {
                 current = 56;
                 if(current == test1*10 + test2){
                     nextTest();
+                }else{
+                    pingWrong.start();
                 }
                 subheading.setForeground(getDrawable(R.drawable.icon5_6heading));
             }

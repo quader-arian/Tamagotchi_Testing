@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private long frameTime;
 
-    private MediaPlayer ping;
+    private MediaPlayer ping, pingWrong;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,15 +52,16 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         ping = MediaPlayer.create(this, R.raw.click);
+        pingWrong = MediaPlayer.create(this, R.raw.wrong);
     }
 
     public void click(View v){
-        ping.start();
-        Log.v("NAME", "True?: " + name.getText().equals(""));
         if(name.getText().toString().equals("")){
+            pingWrong.start();
             Toast.makeText(getApplicationContext(), "Please Enter Subject Name", Toast.LENGTH_SHORT).show();
             name.setHintTextColor(getResources().getColor(R.color.red));
         }else{
+            ping.start();
             name.setHintTextColor(getResources().getColor(R.color.black));
             if(v == b1){
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);

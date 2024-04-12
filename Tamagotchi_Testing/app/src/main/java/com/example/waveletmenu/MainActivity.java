@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
 
     // Keep track of the visibility of the outer/inner menus
     boolean outerIsExpanded = false, innerIsExpanded = false;
-    MediaPlayer ping;
+    MediaPlayer ping, pingWrong;
     boolean iconSelected = false;
     // An image that represents when an outer menu item is selected
     Drawable pink_circle;
@@ -102,9 +102,6 @@ public class MainActivity extends AppCompatActivity{
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
 
-//        test1 = 1;
-//        test2 = 1;
-
         count--;
         Log.v("HELP", "test: " + count);
         if((-1) * (count - 10) != 0){
@@ -112,7 +109,6 @@ public class MainActivity extends AppCompatActivity{
         }
         touchStartTime = System.currentTimeMillis();
         ping.start();
-        //count--;
         if(count < 0){
             try {
                 results.PublishFile(getApplicationContext());
@@ -138,6 +134,7 @@ public class MainActivity extends AppCompatActivity{
 
         // Sound to play on complete
         ping = MediaPlayer.create(this, R.raw.click);
+        pingWrong = MediaPlayer.create(this, R.raw.wrong);
 
         // Initialize the icons
         icon1 = findViewById(R.id.icon1);
@@ -454,6 +451,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(11 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -462,6 +461,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(11 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon1_1Selected = false;
@@ -536,6 +537,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(12 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -544,6 +547,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(12 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon1_2Selected = false;
@@ -617,6 +622,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(13 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -625,6 +632,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(13 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon1_3Selected = false;
@@ -698,6 +707,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(14 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -706,6 +717,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(14 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon1_4Selected = false;
@@ -779,6 +792,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(15 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -787,6 +802,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(15 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
 
                             }
@@ -861,6 +878,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(16 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -869,6 +888,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(16 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon1_6Selected = false;
@@ -1014,6 +1035,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(21 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1022,6 +1045,8 @@ public class MainActivity extends AppCompatActivity{
                                 //check if they selected the right one
                                 if(21 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_1Selected = false;
@@ -1095,6 +1120,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(22 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1102,6 +1129,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(22 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_2Selected = false;
@@ -1175,6 +1204,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(23 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1182,6 +1213,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(23 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_3Selected = false;
@@ -1255,6 +1288,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(24 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1262,6 +1297,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(24 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_4Selected = false;
@@ -1335,6 +1372,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(25 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1342,6 +1381,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(25 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_5Selected = false;
@@ -1415,6 +1456,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(26 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1422,6 +1465,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(26 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon2_6Selected = false;
@@ -1567,6 +1612,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(31 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1574,6 +1621,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(31 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon3_1Selected = false;
@@ -1647,6 +1696,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(32 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1654,6 +1705,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(32 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon3_2Selected = false;
@@ -1727,6 +1780,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(33 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1734,6 +1789,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(33 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon3_3Selected = false;
@@ -1807,6 +1864,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(34 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1814,6 +1873,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(34 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon3_4Selected = false;
@@ -1887,6 +1948,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(35 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -1894,6 +1957,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(35 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon3_5Selected = false;
@@ -2039,6 +2104,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(41 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2046,6 +2113,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(41 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon4_1Selected = false;
@@ -2119,6 +2188,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(42 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2126,6 +2197,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(42 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon4_2Selected = false;
@@ -2199,6 +2272,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(43 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2206,6 +2281,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(43 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon4_3Selected = false;
@@ -2279,6 +2356,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(44 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2286,6 +2365,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(44 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon4_4Selected = false;
@@ -2431,6 +2512,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(51 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2438,6 +2521,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(51 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_1Selected = false;
@@ -2511,6 +2596,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(52 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2518,6 +2605,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(52 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_2Selected = false;
@@ -2591,6 +2680,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(53  == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2598,6 +2689,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(53  == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_3Selected = false;
@@ -2671,6 +2764,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(54 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2678,6 +2773,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(54 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_4Selected = false;
@@ -2751,6 +2848,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(55 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2758,6 +2857,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(55 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_5Selected = false;
@@ -2831,6 +2932,8 @@ public class MainActivity extends AppCompatActivity{
                             expandOuter(false,0);
                             if(56 == test1*10 + test2){
                                 nextTest();
+                            }else{
+                                pingWrong.start();
                             }
                             if(innerIsExpanded) {
                                 expandInner(false,0);
@@ -2838,6 +2941,8 @@ public class MainActivity extends AppCompatActivity{
                                 hideSubHeadings();
                                 if(56 == test1*10 + test2){
                                     nextTest();
+                                }else{
+                                    pingWrong.start();
                                 }
                             }
                             icon5_6Selected = false;
