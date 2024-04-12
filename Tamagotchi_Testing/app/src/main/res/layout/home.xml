@@ -26,6 +26,18 @@
         </TableRow>
 
         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/subtitle_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/subtitle" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -33,6 +45,7 @@
                 android:id="@+id/namefield"
                 android:layout_weight="0"
                 android:fontFamily="monospace"
+                android:hapticFeedbackEnabled="true"
                 android:hint="Tap To Enter Subject Name"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -54,14 +67,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="false"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX=".7"
+                android:scaleY=".7"
                 app:srcCompat="@drawable/radial_heading" />
         </TableRow>
 
@@ -74,8 +89,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="false"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -93,14 +110,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="false"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.7"
+                android:scaleY=".7"
                 app:srcCompat="@drawable/linear_heading" />
         </TableRow>
 
@@ -113,8 +132,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -134,8 +155,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -152,8 +175,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:background="#00FFFFFF"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
