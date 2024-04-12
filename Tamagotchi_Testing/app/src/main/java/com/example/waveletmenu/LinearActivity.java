@@ -75,7 +75,7 @@ public class LinearActivity extends AppCompatActivity {
         testImage1.setImageResource(id1);
         testImage2.setImageResource(id2);
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("Linear", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+            results.WriteToFile(String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
         touchStartTime = System.currentTimeMillis();
         ping.start();
@@ -85,7 +85,9 @@ public class LinearActivity extends AppCompatActivity {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            startActivity(new Intent(LinearActivity.this, HomeActivity.class));
+            Intent intent = new Intent(LinearActivity.this, HomeActivity.class);
+            intent.putExtra("Name", getIntent().getStringExtra("Name"));
+            startActivity(intent);
         }
     }
     // Indicator of which icon is selected
@@ -97,19 +99,18 @@ public class LinearActivity extends AppCompatActivity {
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Linear",name, path);
-        results.WriteToFile("Linear", name, "...");
         ping = MediaPlayer.create(this, R.raw.click);
 
         setContentView(R.layout.linear);
         submenu = findViewById(R.id.submenu);
-        //initalize main menu items
+        //initialize main menu items
         mainItem1 = findViewById(R.id.mainitem1);
         mainItem2 = findViewById(R.id.mainitem2);
         mainItem3 = findViewById(R.id.mainitem3);
         mainItem4 = findViewById(R.id.mainitem4);
         mainItem5 = findViewById(R.id.mainitem5);
 
-        //innitalize sub menu items
+        //initialize sub menu items
         subItem1 = findViewById(R.id.subitem1);
         subItem2 = findViewById(R.id.subitem2);
         subItem3 = findViewById(R.id.subitem3);

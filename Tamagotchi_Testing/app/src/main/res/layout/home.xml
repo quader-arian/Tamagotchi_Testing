@@ -14,6 +14,18 @@
         android:gravity="center_vertical">
 
         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/titleImage"
+                android:layout_width="239dp"
+                android:layout_height="139dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/bunny" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -21,8 +33,10 @@
                 android:id="@+id/namefield"
                 android:layout_weight="0"
                 android:fontFamily="monospace"
+                android:hint="Tap To Enter Subject Name"
                 android:textAlignment="center"
                 android:textColor="#000000"
+                android:textColorHint="#1C1C1C"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 tools:text="Tap To Enter Name">
@@ -36,7 +50,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/wavelet_button"
+                android:id="@+id/radial_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -48,7 +62,7 @@
                 android:scaleType="fitCenter"
                 android:scaleX="0.6"
                 android:scaleY="0.6"
-                app:srcCompat="@drawable/wavelet_heading" />
+                app:srcCompat="@drawable/radial_heading" />
         </TableRow>
 
         <TableRow
@@ -105,8 +119,8 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 app:srcCompat="@drawable/stats1" />
 
         </TableRow>
@@ -126,8 +140,6 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
                 app:srcCompat="@drawable/stats2" />
         </TableRow>
 
@@ -146,8 +158,8 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
                 app:srcCompat="@drawable/stats3" />
 
         </TableRow>

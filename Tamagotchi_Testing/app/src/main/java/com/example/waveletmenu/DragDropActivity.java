@@ -105,7 +105,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         testImage2.setImageResource(id2);
 
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+            results.WriteToFile(String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
         touchStartTime = System.currentTimeMillis();
         if(count < 0){
@@ -114,7 +114,9 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            startActivity(new Intent(DragDropActivity.this, HomeActivity.class));
+            Intent intent = new Intent(DragDropActivity.this, HomeActivity.class);
+            intent.putExtra("Name", getIntent().getStringExtra("Name"));
+            startActivity(intent);
         }
     }
 
@@ -126,8 +128,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
-        results = new ResultsTextMaker("DragNDrop",name, path);
-        results.WriteToFile("DragNDrop", name, "...");
+        results = new ResultsTextMaker("DragNDrop", name, path);
 
         bunny = findViewById(R.id.bunny);
 

@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity{
         count--;
         Log.v("HELP", "test: " + count);
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("Radial", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+            results.WriteToFile(String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
         touchStartTime = System.currentTimeMillis();
         ping.start();
@@ -119,7 +119,9 @@ public class MainActivity extends AppCompatActivity{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            intent.putExtra("Name", getIntent().getStringExtra("Name"));
+            startActivity(intent);
         }
     }
 
@@ -223,7 +225,6 @@ public class MainActivity extends AppCompatActivity{
         String pa = path.getPath();
         Log.v("Find Path", pa);
         results = new ResultsTextMaker("Radial", name, path);
-        results.WriteToFile("Radial", name, "...");
         touchStartTime = System.currentTimeMillis();
         nextTest();
 
