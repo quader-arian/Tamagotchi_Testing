@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.Random;
 
 public class DragDropActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
-
     boolean isOnPage1, isOnPage2, isOnPage3, isOnPage4, isOnPage5;
     private float x1, x2, y1, y2;
     private static final int MIN_DISTANCE = 150;
@@ -105,7 +104,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         testImage2.setImageResource(id2);
 
         if((-1) * (count - 10) != 0){
-            results.WriteToFile("DragNDrop", String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
+            results.WriteToFile(String.format("%d",(count-10)*-1), String.format("%d",System.currentTimeMillis() - touchStartTime));
         }
         touchStartTime = System.currentTimeMillis();
         if(count < 0){
@@ -114,7 +113,9 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            startActivity(new Intent(DragDropActivity.this, HomeActivity.class));
+            Intent intent = new Intent(DragDropActivity.this, HomeActivity.class);
+            intent.putExtra("Name", getIntent().getStringExtra("Name"));
+            startActivity(intent);
         }
     }
 
@@ -126,8 +127,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         String name = getIntent().getStringExtra("Name");
         File path = getApplicationContext().getFilesDir();
         String pa = path.getPath();
-        results = new ResultsTextMaker("DragNDrop",name, path);
-        results.WriteToFile("DragNDrop", name, "...");
+        results = new ResultsTextMaker("DragNDrop", name, path);
 
         bunny = findViewById(R.id.bunny);
 
@@ -186,6 +186,7 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
         this.gestureDetector = new GestureDetector(DragDropActivity.this, this);
 
         final MediaPlayer ping = MediaPlayer.create(this, R.raw.click);
+        final MediaPlayer pingWrong = MediaPlayer.create(this, R.raw.wrong);
 
         isOnPage1 = true;
         isOnPage2 = false;
@@ -208,6 +209,8 @@ public class DragDropActivity extends AppCompatActivity implements GestureDetect
                     subOption.setVisibility(View.INVISIBLE);
                     if(current == test1*10 + test2){
                         nextTest();
+                    }else{
+                        pingWrong.start();
                     }
                 }
                 return true;

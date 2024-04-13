@@ -14,6 +14,18 @@
         android:gravity="center_vertical">
 
         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/titleImage"
+                android:layout_width="239dp"
+                android:layout_height="202dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/bunny" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -21,8 +33,11 @@
                 android:id="@+id/namefield"
                 android:layout_weight="0"
                 android:fontFamily="monospace"
+                android:hapticFeedbackEnabled="true"
+                android:hint="Tap To Enter Subject Name"
                 android:textAlignment="center"
                 android:textColor="#000000"
+                android:textColorHint="#1C1C1C"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 tools:text="Tap To Enter Name">
@@ -36,19 +51,21 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/wavelet_button"
+                android:id="@+id/radial_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="false"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
-                app:srcCompat="@drawable/wavelet_heading" />
+                android:scaleX=".7"
+                android:scaleY=".7"
+                app:srcCompat="@drawable/radial_heading" />
         </TableRow>
 
         <TableRow
@@ -60,12 +77,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="false"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
                 app:srcCompat="@drawable/drag_drop_heading" />
 
         </TableRow>
@@ -79,14 +100,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="false"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.7"
+                android:scaleY=".7"
                 app:srcCompat="@drawable/linear_heading" />
         </TableRow>
 
@@ -99,14 +122,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="true"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 app:srcCompat="@drawable/stats1" />
 
         </TableRow>
@@ -120,14 +145,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="true"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
                 app:srcCompat="@drawable/stats2" />
         </TableRow>
 
@@ -140,14 +165,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:adjustViewBounds="true"
+                android:background="#289C27B0"
                 android:contextClickable="true"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="click"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.6"
-                android:scaleY="0.6"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
                 app:srcCompat="@drawable/stats3" />
 
         </TableRow>
